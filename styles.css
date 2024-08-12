@@ -127,12 +127,17 @@ h1 {
     width: 100%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el efecto de profundidad */
 }
-
 .Ganatomy-section .season-content a {
     display: block; /* Asegura que el enlace ocupe todo el ancho del elemento */
     padding: 10px;
     color: white; /* Color del texto de los enlaces */
     text-decoration: none; /* Sin subrayado en los enlaces */
+
+    /* Media Query para pantallas grandes (ej. TVs) */
+@media (min-width: 1920px) {
+    .title-image {
+        width: 30%; /* Ajusta el tamaño del título para pantallas grandes */
+
 }
 
 .Ganatomy-section .season-content a:hover {
