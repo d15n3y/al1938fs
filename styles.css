@@ -67,13 +67,6 @@ h1 {
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
-
-/* Media Query para pantallas grandes (ej. TVs) */
-@media (min-width: 1920px) {
-    .title-image {
-        width: 30%; /* Ajusta el tamaño del título para pantallas grandes */
-    }
-
     h1 {
         margin-top: 3%; /* Ajusta el espaciado superior para pantallas grandes */
     }
@@ -96,7 +89,11 @@ h1 {
 .marvel-section .movie-list {
     margin-top: 2%; /* Ajusta el margen superior para subir las portadas de Marvel */
 }
-
+.Ganatomy-section .series-title {
+    width: 50%;
+    margin-top: -7%; /* Espaciado superior*/
+    margin-bottom: 7%
+}
 .Ganatomy-section .season-container {
     display: flex; /* Usar flexbox para alinear las temporadas horizontalmente */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
