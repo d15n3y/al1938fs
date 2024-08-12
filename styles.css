@@ -58,9 +58,10 @@ h1 {
     width: 15%; /* Ancho de cada elemento ajustado al formato de película */
 }
 
-.movie-img {
-    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
-    height: 300px; /* Mantener la altura fija para la proporción deseada */
+.movie-img, .season-img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la altura en proporción al ancho */
+    aspect-ratio: 16 / 9; /* Establece una relación de aspecto de 16:9 (ajustar si es necesario) */
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
@@ -79,7 +80,7 @@ h1 {
         width: 12%; /* Ajusta el ancho de los elementos de lista para pantallas grandes */
     }
 
-    .movie-img {
+    .movie-img, .season-img {
         height: 350px; /* Aumenta la altura fija de las imágenes para pantallas grandes */
     }
 }
@@ -102,7 +103,8 @@ h1 {
 
 .marvel-section .movie-img {
     width: 100%; /* Igualar al ancho del contenedor de lista */
-    height: 300px; /* Igualar la altura a las películas */
+    height: auto; /* Mantiene la altura en proporción al ancho */
+    aspect-ratio: 16 / 9; /* Establece una relación de aspecto de 16:9 (ajustar si es necesario) */
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
@@ -131,7 +133,8 @@ h1 {
 
 .Ganatomy-section .season-img {
     width: 100%; /* Igualar al ancho del contenedor de lista */
-    height: 300px; /* Igualar la altura a las películas */
+    height: auto; /* Mantiene la altura en proporción al ancho */
+    aspect-ratio: 16 / 9; /* Establece una relación de aspecto de 16:9 (ajustar si es necesario) */
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para la imagen */
     cursor: pointer; /* Cursor de mano para indicar que es clicable */
@@ -151,12 +154,4 @@ h1 {
 }
 
 .Ganatomy-section .season-content a {
-    display: block; /* Asegura que el enlace ocupe todo el ancho del elemento */
-    padding: 10px;
-    color: white; /* Color del texto de los enlaces */
-    text-decoration: none; /* Sin subrayado en los enlaces */
-}
-
-.Ganatomy-section .season-content a:hover {
-    background-color: #555; /* Color de fondo al pasar el ratón */
-}
+    display
