@@ -67,22 +67,6 @@ h1 {
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
-    /* Media Query para pantallas grandes (ej. TVs) */
-@media (min-width: 1920px) {
-    .title-image {
-        width: 30%; /* Ajusta el tamaño del título para pantallas grandes */
-    h1 {
-        margin-top: 3%; /* Ajusta el espaciado superior para pantallas grandes */
-    }
-
-    .movie-list li {
-        width: 12%; /* Ajusta el ancho de los elementos de lista para pantallas grandes */
-    }
-
-    .movie-img {
-        height: 350px; /* Aumenta la altura fija de las imágenes para pantallas grandes */
-    }
-}
 
 /* Ajuste para la sección Marvel */
 .marvel-section .title-image {
