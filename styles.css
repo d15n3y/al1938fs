@@ -110,11 +110,9 @@ h1 {
 }
 
 .Ganatomy-section .season {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
-    justify-content: center; /* Centra las películas horizontalmente */
+    display: flex; /* Colocar imagen en columna */
+    flex-direction: column; /* Colocar la imagen encima del contenido */
+    align-items: center; /* Centrar horizontalmente */
     margin: 0.5%; /* Reducido el margen entre las temporadas */
     width: 15%; /* Ancho de cada temporada ajustado al formato de película */
 }
