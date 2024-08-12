@@ -102,6 +102,12 @@ h1 {
     margin-top: -7%; /* Espaciado superior*/
     margin-bottom: 7%
 }
+.Ganatomy-section .season-container {
+    display: flex; /* Usar flexbox para alinear las temporadas horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center; /* Centra las temporadas horizontalmente */
+    margin-top: -12%; /* Espaciado superior */
+}
 
 .Ganatomy-section .season {
     list-style: none;
