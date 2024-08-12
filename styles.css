@@ -73,6 +73,28 @@ h1 {
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
+/* Imágenes de películas */
+.movie-img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
+    height: 300px; /* Mantener la altura fija para la proporción deseada */
+    object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+}
+
+/* Ajuste de estilos en la sección Marvel */
+.marvel-section .movie-img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
+    height: 300px; /* Mantener la altura fija para la proporción deseada */
+    object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+}
+
+/* Ajuste del contenedor en la sección Marvel si es necesario */
+.marvel-section .movie-list {
+    margin-top: 2%; /* Ajusta el margen superior si es necesario */
+    width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
+}
+
 
 /* Media Query para pantallas grandes (ej. TVs) */
 @media (min-width: 1920px) {
