@@ -20,8 +20,8 @@ body {
     width: 40%; /* Ancho del 40% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     margin-bottom: -4%; /* Reducido el espaciado inferior para ajustar la posición */
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 50%;
+    margin-right: 50%;
 }
 
 
