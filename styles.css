@@ -43,7 +43,7 @@ h1 {
 
 .movie-list {
     list-style: none;
-    padding: 0;
+    padding: 2;
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: center; /* Centra las películas horizontalmente */
@@ -53,7 +53,7 @@ h1 {
 
 .movie-list li {
     list-style: none;
-    padding: 0;
+    padding: 2;
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: center; /* Centra las películas horizontalmente */
@@ -67,6 +67,10 @@ h1 {
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
+    /* Media Query para pantallas grandes (ej. TVs) */
+@media (min-width: 1920px) {
+    .title-image {
+        width: 30%; /* Ajusta el tamaño del título para pantallas grandes */
     h1 {
         margin-top: 3%; /* Ajusta el espaciado superior para pantallas grandes */
     }
@@ -132,11 +136,6 @@ h1 {
     padding: 10px;
     color: white; /* Color del texto de los enlaces */
     text-decoration: none; /* Sin subrayado en los enlaces */
-
-    /* Media Query para pantallas grandes (ej. TVs) */
-@media (min-width: 1920px) {
-    .title-image {
-        width: 30%; /* Ajusta el tamaño del título para pantallas grandes */
 
 }
 
