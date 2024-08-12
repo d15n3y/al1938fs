@@ -43,7 +43,7 @@ h1 {
 
 .movie-list {
     list-style: none;
-    padding: 2;
+    padding: 0;
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: center; /* Centra las películas horizontalmente */
@@ -53,7 +53,7 @@ h1 {
 
 .movie-list li {
     list-style: none;
-    padding: 2;
+    padding: 0;
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: center; /* Centra las películas horizontalmente */
@@ -84,7 +84,7 @@ h1 {
 }
 .Ganatomy-section .season-container {
     list-style: none;
-    padding: 2;
+    padding: 0;
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: center; /* Centra las películas horizontalmente */
