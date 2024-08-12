@@ -32,6 +32,9 @@ body {
     margin-bottom: -4%; /* Reducido el espaciado inferior para ajustar la posición */
     margin-top: 3%
 }
+.center-image {
+    text-align: center; /* Centra el contenido dentro del div */
+}
 
 h1 {
     margin-top: 2%; /* Reducido el margen superior para acercar el título a la imagen */
