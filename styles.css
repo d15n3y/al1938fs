@@ -97,20 +97,19 @@ h1 {
     margin-top: 2%; /* Ajusta el margen superior para subir las portadas de Marvel */
 }
 
-.Ganatomy-section .series-title {
-    width: 50%;
-    margin-top: -7%; /* Espaciado superior*/
-    margin-bottom: 7%
+.Ganatomy-section .season-container {
+    display: flex; /* Usar flexbox para alinear las temporadas horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center; /* Centra las temporadas horizontalmente */
+    margin-top: -12%; /* Espaciado superior */
 }
 
 .Ganatomy-section .season {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
-    justify-content: center; /* Centra las películas horizontalmente */
-    margin: 0; /* Eliminado el margen entre las temporadas */
-    width: 100%; /* Ancho completo del contenedor para permitir el ajuste de los elementos */
+    display: flex; /* Colocar imagen en columna */
+    flex-direction: column; /* Colocar la imagen encima del contenido */
+    align-items: center; /* Centrar horizontalmente */
+    margin: 0.5%; /* Reducido el margen entre las temporadas */
+    width: 15%; /* Ancho de cada temporada ajustado al formato de película */
 }
 
 .Ganatomy-section .season-img {
