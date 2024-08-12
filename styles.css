@@ -18,18 +18,19 @@ body {
     object-fit: cover; /* Ajusta el video para cubrir el fondo */
     z-index: -1; /* Asegura que el video esté detrás del contenido */
 }
-
 .title-image {
-    width: 50%; /* Ancho del 50% del contenedor */
+    width: 50%; /* Ancho del 40% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     margin-bottom: -4%; /* Reducido el espaciado inferior para ajustar la posición */
-    margin-top: 3%; /* Ajusta el margen superior */
+    margin-top: 3%
 }
-
 .center-image {
     text-align: center; /* Centra el contenido dentro del div */
 }
 
+h1 {
+    margin-top: 2%; /* Reducido el margen superior para acercar el título a la imagen */
+}
 h1 {
     font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
     font-size: 3em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
@@ -37,7 +38,7 @@ h1 {
     color: #EAFF95; /* Cambia el color si lo deseas */
     text-align: right; /* Opcional: centrar el texto */
     margin-top: 2px; /* Ajusta el margen superior si es necesario */
-    margin-right: 5%;
+    margin-right: 5%
 }
 
 .movie-list {
@@ -51,17 +52,18 @@ h1 {
 }
 
 .movie-list li {
-    display: flex;
-    flex-direction: column; /* Colocar imagen en columna */
-    align-items: center; /* Centrar horizontalmente */
+    list-style: none;
+    padding: 0;
+    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center; /* Centra las películas horizontalmente */
     margin: 0.25%; /* Reducido aún más el margen entre las películas */
-    width: 15%; /* Ancho de cada elemento ajustado al formato de película */
+    width: 15%; /* Aumentado el ancho para hacer las imágenes más anchas */
 }
 
-.movie-img, .season-img {
-    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
-    height: auto; /* Mantiene la altura en proporción al ancho */
-    aspect-ratio: 16 / 9; /* Establece una relación de aspecto de 16:9 (ajustar si es necesario) */
+.movie-img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
+    height: 300px; /* Mantener la altura fija para la proporción deseada */
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
@@ -80,61 +82,40 @@ h1 {
         width: 12%; /* Ajusta el ancho de los elementos de lista para pantallas grandes */
     }
 
-    .movie-img, .season-img {
+    .movie-img {
         height: 350px; /* Aumenta la altura fija de las imágenes para pantallas grandes */
     }
 }
 
 /* Ajuste para la sección Marvel */
 .marvel-section .title-image {
-    width: 50%; /* Ancho del 50% del contenedor */
+    width: 50%;
     margin-top: 1.3%; /* Ajusta el margen superior para subir la imagen */
-    margin-bottom: 1.3%; /* Ajusta el margen inferior */
+    margin-bottom: 1.3%
 }
-
 .marvel-section .movie-list {
     margin-top: 2%; /* Ajusta el margen superior para subir las portadas de Marvel */
-    width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
 }
 
-.marvel-section .movie-list li {
-    width: 15%; /* Igualar el ancho a las películas */
-}
-
-.marvel-section .movie-img {
-    width: 100%; /* Igualar al ancho del contenedor de lista */
-    height: auto; /* Mantiene la altura en proporción al ancho */
-    aspect-ratio: 16 / 9; /* Establece una relación de aspecto de 16:9 (ajustar si es necesario) */
-    object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
-    border-radius: 8px; /* Bordes redondeados para las imágenes */
-}
-
-/* Ajustes para la sección de Anatomía de Grey */
 .Ganatomy-section .series-title {
     width: 50%;
-    margin-top: -7%; /* Espaciado superior */
-    margin-bottom: 7%; /* Espaciado inferior */
-}
-
-.Ganatomy-section .season-container {
-    display: flex; /* Usar flexbox para alinear las temporadas horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
-    justify-content: center; /* Centra las temporadas horizontalmente */
-    margin-top: -12%; /* Espaciado superior */
+    margin-top: -7%; /* Espaciado superior*/
+    margin-bottom: 7%
 }
 
 .Ganatomy-section .season {
-    display: flex; /* Colocar imagen en columna */
-    flex-direction: column; /* Colocar la imagen encima del contenido */
-    align-items: center; /* Centrar horizontalmente */
+    list-style: none;
+    padding: 0;
+    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center; /* Centra las películas horizontalmente */
     margin: 0.5%; /* Reducido el margen entre las temporadas */
     width: 15%; /* Ancho de cada temporada ajustado al formato de película */
 }
 
 .Ganatomy-section .season-img {
-    width: 100%; /* Igualar al ancho del contenedor de lista */
-    height: auto; /* Mantiene la altura en proporción al ancho */
-    aspect-ratio: 16 / 9; /* Establece una relación de aspecto de 16:9 (ajustar si es necesario) */
+    width: 100%; /* Ancho de la imagen de la temporada */
+    height: 300px; /* Altura fija para mantener la proporción */
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8px; /* Bordes redondeados para la imagen */
     cursor: pointer; /* Cursor de mano para indicar que es clicable */
@@ -154,4 +135,13 @@ h1 {
 }
 
 .Ganatomy-section .season-content a {
-    display
+    display: block; /* Asegura que el enlace ocupe todo el ancho del elemento */
+    padding: 10px;
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+.Ganatomy-section .season-content a:hover {
+    background-color: #555; /* Color de fondo al pasar el ratón */
+}
+
