@@ -82,57 +82,60 @@ h1 {
     margin-top: -7%; /* Espaciado superior*/
     margin-bottom: 7%
 }
-.Ganatomy-section .season-container {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
-    justify-content: center; /* Centra las películas horizontalmente */
-    margin-top: -12%; /* Espaciado superior */
-}
-
-.Ganatomy-section .season {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
-    justify-content: center; /* Centra las películas horizontalmente */
-    margin: 0.5%; /* Reducido el margen entre las temporadas */
-    width: 15%; /* Ancho de cada temporada ajustado al formato de película */
-}
-
-.Ganatomy-section .season-img {
-    width: 100%; /* Ancho de la imagen de la temporada */
-    height: 300px; /* Altura fija para mantener la proporción */
-    object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
-    border-radius: 8px; /* Bordes redondeados para la imagen */
-    cursor: pointer; /* Cursor de mano para indicar que es clicable */
-    margin-bottom: 1%; /* Espaciado inferior de la imagen de temporada */
-}
-
+.Ganatomy-section.season-container {  
+  list-style: none;  
+  padding: 0;  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: center;  
+  margin-top: -12%;  
+}  
+  
+.Ganatomy-section.season {  
+  list-style: none;  
+  padding: 0;  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: center;  
+  margin: 0.5%;  
+  width: 15%;  
+}  
+  
+.Ganatomy-section.season-img {  
+  width: 100%;  
+  height: 300px;  
+  object-fit: cover;  
+  border-radius: 8px;  
+  cursor: pointer;  
+  margin-bottom: 1%;  
+}  
+  
 .Ganatomy-section.season-content {  
-  display: none; /* Ocultar el contenido por defecto */  
-  list-style: none; /* Quitar puntos de la lista */  
+  display: none;  
+  list-style: none;  
   padding: 0;  
   margin: 0;  
-  background-color: #333; /* Color de fondo para contraste */  
-  border-radius: 8px; /* Bordes redondeados para el fondo */  
-  text-align: left; /* Alinear texto a la izquierda */  
-  width: auto; /* Cambiar ancho a auto para que se ajuste al contenido */  
-  white-space: nowrap; /* Evitar saltos de línea */  
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el efecto de profundidad */  
-  flex-direction: row; /* Agregar dirección horizontal */  
-  display: flex; /* Agregar display flex */  
+  background-color: #333;  
+  border-radius: 8px;  
+  text-align: left;  
+  width: auto;  
+  white-space: nowrap;  
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);  
+  flex-direction: row;  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: flex-start;  
 }  
   
 .Ganatomy-section.season-content a {  
-  display: inline-block; /* Cambiar a inline-block para que se alineen horizontalmente */  
+  display: inline-block;  
   padding: 10px;  
-  color: white; /* Color del texto de los enlaces */  
-  text-decoration: none; /* Sin subrayado en los enlaces */  
-  margin-right: 10px; /* Agregar margen derecho para separar los elementos */  
+  color: white;  
+  text-decoration: none;  
+  margin-right: 10px;  
+  width: calc(33.33% - 10px);  
 }  
   
 .Ganatomy-section.season-content a:hover {  
-  background-color: #555; /* Color de fondo al pasar el ratón */  
+  background-color: #555;  
 }
