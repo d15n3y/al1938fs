@@ -37,13 +37,14 @@ body {
 }
 
 h1 {
-    padding: 1px
+    padding: 0px
     margin-top: -3%; 
     font-family: 'Waltograph', sans-serif; 
     font-size: 12em; 
     font-weight: bold; 
     color: #FFFFFF; 
     text-align: center
+    height: auto
 }
 
 h2 {
