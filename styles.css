@@ -37,19 +37,13 @@ body {
 }
 
 h1 {
+    padding: 1px
     margin-top: -3%; 
     font-family: 'Waltograph', sans-serif; 
-    font-size: 15em; 
+    font-size: 12em; 
     font-weight: bold; 
     color: #FFFFFF; 
     text-align: center
-
-@media only screen and (max-width:768px){
-    .h1{
-        margin-top: 30%
-    }
-}
-
 }
 
 h2 {
