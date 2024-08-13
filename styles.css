@@ -37,17 +37,17 @@ body {
 }
 
 h1 {
-    padding: 0px
     margin-top: -3%; 
     font-family: 'Waltograph', sans-serif; 
-    font-size: 12em; 
+    font-size: 15em; 
     font-weight: bold; 
     color: #FFFFFF; 
     text-align: center
+
 }
 
 h2 {
-    margin-top: -13%; /* Reducido el margen superior para acercar el título a la imagen */
+    margin-top: -18%; /* Reducido el margen superior para acercar el título a la imagen */
     font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
     font-size: 3em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
     font-weight: bold; /* Ajusta el grosor de la fuente si es necesario */
