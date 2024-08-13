@@ -46,7 +46,7 @@ h1 {
 
 @media only screen and (max-width:768px){
     .h1{
-        height: 30px
+        margin-top: 5%
     }
 }
 
