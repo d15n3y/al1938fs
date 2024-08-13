@@ -57,7 +57,7 @@ h2 {
 }
 
 h3 {
-    margin-top: -3%; /* Reducido el margen superior para acercar el título a la imagen */
+    margin-top: -7%; /* Reducido el margen superior para acercar el título a la imagen */
     font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
     font-size: 2em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
     font-weight: light;
