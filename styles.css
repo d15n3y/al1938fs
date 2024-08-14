@@ -54,17 +54,6 @@ h2 {
     text-align: right; /* Opcional: centrar el texto */
     margin-right: 5%
 }
-
-h3 {
-    margin-top: -3%; /* Reducido el margen superior para acercar el título a la imagen */
-    font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
-    font-size: 2em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
-    font-weight: light;
-    color: #FFFFFF; /* Cambia el color si lo deseas */
-    text-align: left; /* Opcional: centrar el texto */
-    margin-left: 5%
-}
-
 .movie-list {
     list-style: none;
     padding: 0;
