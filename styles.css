@@ -22,22 +22,22 @@ body {
     z-index: -1; /* Asegura que el video esté detrás del contenido */
 }
 .marvel-image {
-    width: 50%; /* Ancho del 40% del contenedor */
+    width: 30%; /* Ancho del 40% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     margin-bottom: 1%; /* Reducido el espaciado inferior para ajustar la posición */
     margin-top: 0%
     text-align: center; /* Centra el contenido dentro del div */
 }
 .ganatomy-image {
-    width: 50%; /* Ancho del 40% del contenedor */
+    width: 30%; /* Ancho del 40% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
-    margin-bottom: -6%; /* Reducido el espaciado inferior para ajustar la posición */
+    margin-bottom: -9%; /* Reducido el espaciado inferior para ajustar la posición */
     margin-top: 0%
     text-align: center; /* Centra el contenido dentro del div */
 }
 
 h1 {
-    margin-top: 2%; 
+    margin-top: 4%; 
     font-family: 'Waltograph', sans-serif; 
     font-size: 11em; 
     font-weight: bold; 
@@ -46,9 +46,9 @@ h1 {
 }
 
 h2 {
-    margin-top: -7%; /* Reducido el margen superior para acercar el título a la imagen */
+    margin-top: -10%; /* Reducido el margen superior para acercar el título a la imagen */
     font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
-    font-size: 2.4em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
+    font-size: 2em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
     font-weight: bold; /* Ajusta el grosor de la fuente si es necesario */
     color: #FFFFFF; /* Cambia el color si lo deseas */
     text-align: right; /* Opcional: centrar el texto */
@@ -61,7 +61,7 @@ h2 {
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: center; /* Centra las películas horizontalmente */
-    margin-top: 0%; /* Reducido el margen superior para acercar la lista de películas al título */
+    margin-top: 5%; /* Reducido el margen superior para acercar la lista de películas al título */
     width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
 }
 
@@ -72,7 +72,7 @@ h2 {
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: center; /* Centra las películas horizontalmente */
     margin-top: 0%; /* Reducido el margen superior para acercar la lista de películas al título */
-    margin-bottom: -7%;
+    margin-bottom: -4%;
     width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
 }
 
