@@ -131,6 +131,14 @@ overflow-x: auto;
   border-radius: 10px;  
 }
 
+@media tv {  
+ .movie-list {  
+   overflow-x: hidden; /* Remove scrollbar on TV screens */  
+   flex-wrap: wrap; /* Allow elements to wrap to the next line */  
+   justify-content: center; /* Center the elements horizontally */  
+  }  
+}
+
 
 .movie-img, .season-img {
     width: 200px; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
