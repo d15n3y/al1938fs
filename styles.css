@@ -137,6 +137,16 @@ overflow-x: auto;
    flex-wrap: wrap; /* Allow elements to wrap to the next line */  
    justify-content: center; /* Center the elements horizontally */  
   }  
+    .marvelmovie-list {  
+   overflow-x: hidden; /* Remove scrollbar on TV screens */  
+   flex-wrap: wrap; /* Allow elements to wrap to the next line */  
+   justify-content: center; /* Center the elements horizontally */  
+  }  
+    .gaseason-list {  
+   overflow-x: hidden; /* Remove scrollbar on TV screens */  
+   flex-wrap: wrap; /* Allow elements to wrap to the next line */  
+   justify-content: center; /* Center the elements horizontally */  
+  }  
 }
 
 
