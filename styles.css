@@ -1,0 +1,131 @@
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white; /* Cambiar color de texto a blanco para contraste */
+    margin: 0; /* Elimina margen por defecto del body */
+    height: 100vh; /* Asegura que el cuerpo tenga al menos la altura de la ventana */
+    overflow-y: auto; /* Permitir el desplazamiento vertical si el contenido es demasiado largo */
+    position: relative; /* Necesario para posicionar el video en el fondo */
+    z-index: 1; /* Asegura que el contenido se muestre sobre el video */
+}
+
+.video-background {
+    position: fixed; /* Posiciona el video de manera absoluta para que ocupe todo el fondo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho del 100% del contenedor */
+    height: 100%; /* Alto del 100% del contenedor */
+    object-fit: cover; /* Ajusta el video para cubrir el fondo */
+    z-index: -1; /* Asegura que el video esté detrás del contenido */
+}
+.marvel-image {
+    width: 50%; /* Ancho del 40% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 1%; /* Reducido el espaciado inferior para ajustar la posición */
+    margin-top: 0%
+    text-align: center; /* Centra el contenido dentro del div */
+}
+.ganatomy-image {
+    width: 50%; /* Ancho del 40% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: -6%; /* Reducido el espaciado inferior para ajustar la posición */
+    margin-top: 0%
+    text-align: center; /* Centra el contenido dentro del div */
+}
+
+h1 {
+    margin-top: -3%; 
+    font-family: 'Waltograph', sans-serif; 
+    font-size: 15em; 
+    font-weight: bold; 
+    color: #FFFFFF; 
+    text-align: center
+
+}
+
+h2 {
+    margin-top: -18%; /* Reducido el margen superior para acercar el título a la imagen */
+    font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
+    font-size: 3em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
+    font-weight: bold; /* Ajusta el grosor de la fuente si es necesario */
+    color: #FFFFFF; /* Cambia el color si lo deseas */
+    text-align: right; /* Opcional: centrar el texto */
+    margin-right: 5%
+}
+
+h3 {
+    margin-top: -3%; /* Reducido el margen superior para acercar el título a la imagen */
+    font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
+    font-size: 2em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
+    font-weight: light;
+    color: #FFFFFF; /* Cambia el color si lo deseas */
+    text-align: left; /* Opcional: centrar el texto */
+    margin-left: 5%
+}
+
+.movie-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center; /* Centra las películas horizontalmente */
+    margin-top: 0%; /* Reducido el margen superior para acercar la lista de películas al título */
+    width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
+}
+
+.marvel-movie-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center; /* Centra las películas horizontalmente */
+    margin-top: 0%; /* Reducido el margen superior para acercar la lista de películas al título */
+    margin-bottom: -7%;
+    width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
+}
+
+
+.movie-img {
+    width: 200px; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
+    height: 300px; /* Mantener la altura fija para la proporción deseada */
+    object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
+    border-radius: 8% ; /* Bordes redondeados para las imágenes */
+    border: 4px solid transparent
+}
+
+.season-img {
+    width: 200px; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
+    height: 300px; /* Mantener la altura fija para la proporción deseada */
+    object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
+    border-radius: 8% ; /* Bordes redondeados para las imágenes */
+    border: 4px solid transparent
+}
+
+.caps {
+    display: none; /* Ocultar el contenido por defecto */
+    list-style: none; 
+    padding: 0;
+    margin: 10px;
+    background-color: #333; /* Color de fondo para contraste */
+    border-radius: 8px; /* Bordes redondeados para el fondo */
+    columns: 3;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el efecto de profundidad */
+    
+}
+
+.caps a {
+    display: block; /* Asegura que el enlace ocupe todo el ancho del elemento */
+    padding: 0;
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    width: 100%;
+
+}
+
+.caps a:hover {
+    background-color: #555; 
+}
