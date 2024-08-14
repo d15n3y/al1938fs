@@ -57,7 +57,7 @@ h2 {
 }
 
 h3 {
-    margin-top: -7%; /* Reducido el margen superior para acercar el título a la imagen */
+    margin-top: -4%; /* Reducido el margen superior para acercar el título a la imagen */
     font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
     font-size: 2em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
     font-weight: light;
@@ -72,7 +72,7 @@ h3 {
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: center; /* Centra las películas horizontalmente */
-    margin-top: 0%; /* Reducido el margen superior para acercar la lista de películas al título */
+    margin-top: 1%; /* Reducido el margen superior para acercar la lista de películas al título */
     width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
 }
 
