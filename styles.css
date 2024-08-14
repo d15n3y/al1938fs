@@ -54,6 +54,28 @@ h2 {
     text-align: right; /* Opcional: centrar el texto */
     margin-right: 5%
 }
+
+@media only screen and (max-width: 768px) {  
+ .h1 {  
+   font-size: 8em;  
+   line-height: 1.1;  
+  }  
+  .h2{
+    font-size: 1em;  
+   line-height: 1.1; 
+  }
+}  
+  
+@media only screen and (max-width: 480px) {  
+ .h1 {  
+   font-size: 5em;  
+   line-height: 1;  
+  }  
+ .h2{
+    font-size: 0.4em;  
+   line-height: 1.1; 
+  }
+}
 .movie-list {
     list-style: none;
     padding: 0;
