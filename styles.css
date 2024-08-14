@@ -1,6 +1,5 @@
 
 
-
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -15,11 +14,13 @@ body {
 .video-background {
     position: fixed; /* Posiciona el video de manera absoluta para que ocupe todo el fondo */
     top: 0;
-    left: 0;
-    width: 100%; /* Ancho del 100% del contenedor */
+    left: -15%;
+    right: 0;
+    width: 130%; 
     height: 100%; /* Alto del 100% del contenedor */
     object-fit: cover; /* Ajusta el video para cubrir el fondo */
     z-index: -1; /* Asegura que el video esté detrás del contenido */
+    
 }
 .marvel-image {
     width: 30%; /* Ancho del 40% del contenedor */
@@ -77,7 +78,7 @@ h2 {
 }
 
 
-.movie-img {
+.movie-img, .season-img {
     width: 200px; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
     height: 300px; /* Mantener la altura fija para la proporción deseada */
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
@@ -85,13 +86,24 @@ h2 {
     border: 4px solid transparent
 }
 
-.season-img {
-    width: 200px; /* Asegura que la imagen ocupe el 100% del ancho del contenedor de lista */
-    height: 300px; /* Mantener la altura fija para la proporción deseada */
-    object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
-    border-radius: 8% ; /* Bordes redondeados para las imágenes */
-    border: 4px solid transparent
+.movie-img:hover { 
+  /* Add a box shadow to create a highlighting effect */  
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  
+   
+  /* You can also add other styles as needed, such as changing the opacity or background color */  
+  opacity: 0.8;  
+  background-color: #f2f2f2;  
+
 }
+.season-img:hover {  
+  /* Add a box shadow to create a highlighting effect */  
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  
+   
+  /* You can also add other styles as needed, such as changing the opacity or background color */  
+  opacity: 0.8;  
+  background-color: #f2f2f2;  
+}
+
 
 .caps {
     display: none; /* Ocultar el contenido por defecto */
