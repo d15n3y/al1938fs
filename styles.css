@@ -14,7 +14,12 @@ body {
 @media only screen and (min-width: 1920px) {  
   body {  
    background-size: 100% 100vh; /* cover the entire screen */  
-   background-position: center; /* center the image horizontally and vertically */  
+   background-position: center; /* center the image horizontally and vertically */
+       top: 0;
+    left: -15%;
+    right: 0;
+    width: 130%; 
+    height: 100%; /* Alto del 100% del contenedor */
   }  
 }
 
