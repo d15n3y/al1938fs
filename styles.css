@@ -37,9 +37,9 @@ body {
 }
 
 h1 {
-    margin-top: -3%; 
+    margin-top: -2%; 
     font-family: 'Waltograph', sans-serif; 
-    font-size: 15em; 
+    font-size: 11em; 
     font-weight: bold; 
     color: #FFFFFF; 
     text-align: center
@@ -48,38 +48,13 @@ h1 {
 h2 {
     margin-top: -18%; /* Reducido el margen superior para acercar el título a la imagen */
     font-family: 'Waltograph', sans-serif; /* Cambia 'NombreDeLaFuente' por el nombre de la fuente que deseas usar */
-    font-size: 3em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
+    font-size: 2.4em; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
     font-weight: bold; /* Ajusta el grosor de la fuente si es necesario */
     color: #FFFFFF; /* Cambia el color si lo deseas */
     text-align: right; /* Opcional: centrar el texto */
     margin-right: 5%
 }
 
-@media only screen and (max-width: 768px) {  
- .h1 {  
-   font-size: 8em;  
-   line-height: 1.1;
-     margin-top: 10%
-  }  
-  .h2{
-    font-size: 1em;  
-   line-height: 1.1;
-    margin-top: -13%
-  }
-}  
-  
-@media only screen and (max-width: 480px) {  
- .h1 {  
-   font-size: 5em;  
-   line-height: 1;  
-     margin-top: 10%
-  }  
- .h2{
-    font-size: 0.4em;  
-   line-height: 1.1;
-     margin-top: -8%
-  }
-}
 .movie-list {
     list-style: none;
     padding: 0;
