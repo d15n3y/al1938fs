@@ -11,13 +11,6 @@ body {
     z-index: 1; /* Asegura que el contenido se muestre sobre el video */
 }
 
-@media only screen and (min-width: 1920px) {  
-  body {  
-   background-size: 130%; /* cover the entire screen */  
-   background-position: center; /* center the image horizontally and vertically */
-  }  
-}
-
 .video-background {
     position: fixed; /* Posiciona el video de manera absoluta para que ocupe todo el fondo */
     top: 0;
