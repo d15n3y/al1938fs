@@ -1,5 +1,6 @@
 
 
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -10,6 +11,7 @@ body {
     position: relative; /* Necesario para posicionar el video en el fondo */
     z-index: 1; /* Asegura que el contenido se muestre sobre el video */
 }
+
 
 .video-background {
     position: fixed; /* Posiciona el video de manera absoluta para que ocupe todo el fondo */
@@ -60,21 +62,73 @@ h2 {
     list-style: none;
     padding: 0;
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
-    justify-content: center; /* Centra las películas horizontalmente */
+    flex-wrap: nowrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: flex-start;  
     margin-top: 5%; /* Reducido el margen superior para acercar la lista de películas al título */
     width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
+overflow-x: auto;
+
+}
+
+.movie-list::-webkit-scrollbar {  
+  width: 10px;  
+  height: 10px;  
+  background-color: transparent;  
+  border-radius: 10px;  
+}  
+  
+.movie-list::-webkit-scrollbar-thumb {  
+  background-color: rgba(0, 0, 0, 0.2);  
+  border-radius: 10px;  
 }
 
 .marvel-movie-list {
     list-style: none;
     padding: 0;
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
-    justify-content: center; /* Centra las películas horizontalmente */
+    flex-wrap: nowrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: flex-start; /* Centra las películas horizontalmente */
     margin-top: 0%; /* Reducido el margen superior para acercar la lista de películas al título */
     margin-bottom: -4%;
     width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
+overflow-x: auto;
+}
+
+.marvel-movie-list::-webkit-scrollbar {  
+  width: 10px;  
+  height: 10px;  
+  background-color: transparent;  
+  border-radius: 10px;  
+}  
+  
+.marvel-movie-list::-webkit-scrollbar-thumb {  
+  background-color: rgba(0, 0, 0, 0.2);  
+  border-radius: 10px;  
+}
+
+.gaseason-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Usar flexbox para alinear las películas horizontalmente */
+    flex-wrap: nowrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: flex-start;  
+    margin-top: 5%; /* Reducido el margen superior para acercar la lista de películas al título */
+    width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
+overflow-x: auto;
+
+}
+
+
+.gaseason-list::-webkit-scrollbar {  
+  width: 10px;  
+  height: 10px;  
+  background-color: transparent;  
+  border-radius: 10px;  
+}  
+  
+.gaseason-list::-webkit-scrollbar-thumb {  
+  background-color: rgba(0, 0, 0, 0.2);  
+  border-radius: 10px;  
 }
 
 
