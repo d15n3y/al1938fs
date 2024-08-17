@@ -1,19 +1,19 @@
 
 
-
 body {
-    background: none
+    background-color: black;
     font-family: Arial, sans-serif;
     text-align: center;
     color: white; /* Cambiar color de texto a blanco para contraste */
     margin: 0; /* Elimina margen por defecto del body */
-    height: 100vh; /* Asegura que el cuerpo tenga al menos la altura de la ventana */
+    height: 0vh; /* Asegura que el cuerpo tenga al menos la altura de la ventana */
     overflow-y: auto; /* Permitir el desplazamiento vertical si el contenido es demasiado largo */
     position: relative; /* Necesario para posicionar el video en el fondo */
     z-index: 1; /* Asegura que el contenido se muestre sobre el video */
+
 }
 
-
+   
 .disney {
 position: relative;
 }
@@ -95,12 +95,13 @@ h2 {
 position: relative;
     padding: 0;
     display: flex; /* Usar flexbox para alinear las películas horizontalmente */
-    flex-wrap: nowrap; /* Permite que los elementos se envuelvan en varias líneas */
+    flex-wrap: nowrap; 
     justify-content: flex-start;  
     margin-top: 8%; 
 margin-bottom: 0%;
     width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
-overflow-x: auto;
+overflow: auto;
+
 
 }
 
@@ -126,7 +127,8 @@ overflow-x: auto;
     margin-top: 0%; /* Reducido el margen superior para acercar la lista de películas al título */
     margin-bottom: 0%;
     width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
-overflow-x: auto;
+overflow: auto;
+
 }
 
 .marvel-movie-list::-webkit-scrollbar {  
@@ -148,8 +150,9 @@ overflow-x: auto;
     flex-wrap: nowrap; /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: flex-start;  
     margin-top: 0%; 
-margin-bottom: 0%;    width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
-overflow-x: auto;
+margin-bottom: 0%;    
+width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
+overflow: auto;
 
 }
 
@@ -177,7 +180,7 @@ overflow-x: auto;
     justify-content: flex-start;  
     margin-top: 0%; /* Reducido el margen superior para acercar la lista de películas al título */
     width: 100%; /* Asegura que la lista ocupe el ancho completo del contenedor */
-overflow-x: auto;
+overflow: auto;
 
 }
 
@@ -210,26 +213,10 @@ overflow-x: auto;
     height: 300px; /* Mantener la altura fija para la proporción deseada */
     object-fit: cover; /* Mantiene la proporción de la imagen y recorta el exceso si es necesario */
     border-radius: 8% ; /* Bordes redondeados para las imágenes */
-    border: 13px solid transparent
-}
-
-.movie-img:hover { 
-  /* Add a box shadow to create a highlighting effect */  
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  
-   
-  /* You can also add other styles as needed, such as changing the opacity or background color */  
-  opacity: 0.8;  
-  background-color: #f2f2f2;  
+    border: 13px solid transparent;
 
 }
-.season-img:hover {  
-  /* Add a box shadow to create a highlighting effect */  
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  
-   
-  /* You can also add other styles as needed, such as changing the opacity or background color */  
-  opacity: 0.8;  
-  background-color: #f2f2f2;  
-}
+
 
 
 .caps {
@@ -257,3 +244,86 @@ overflow-x: auto;
 .caps a:hover {
     background-color: #555; 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+            display: none; /* Ocultamos la ventana emergente por defecto */
+            position: fixed; /* Fijo en la pantalla */
+            z-index: 1; /* Asegúrate de que está encima de otros contenidos */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Agrega desplazamiento si es necesario */
+            background-color: rgba(0,0,0,0.8); /* Fondo oscuro con transparencia */
+        }
+
+        /* El contenido de la ventana emergente */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 0; /* Ocupa toda la pantalla */
+            padding: 0; /* Sin padding */
+            border: none; /* Sin borde */
+            width: 100%; /* Ocupa el 100% del ancho de la pantalla */
+            height: 100%; /* Ocupa el 100% de la altura de la pantalla */
+        }
+
+        /* El botón para cerrar la ventana emergente */
+       .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 100%; 
+            
+        }
+
+.movie-img:hover {
+            transform: scale(1.03); /* Efecto de zoom al pasar el cursor */
+cursor: pointer;
+        }
+
+.season-img:hover {
+            transform: scale(1.03); /* Efecto de zoom al pasar el cursor */
+cursor: pointer;
+        }
+
+
+        .close:hover {
+            opacity: 1; /* Visible al pasar el cursor */
+            background-color: grey; /* Fondo gris al pasar el cursor */
+        }
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Asegúrate de que el iframe se ajuste al contenedor */
+        iframe {
+            width: 100%;
+            height: 100%; /* Ajusta la altura según tus necesidades */
+            border: none; /* Quita el borde para una apariencia más limpia */
+        }
+
+        
