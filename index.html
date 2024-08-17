@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<body>
 <head>
-
     <title>Disney</title>
     <link rel="icon" type="image/ico" href="Portadas/icon.ico"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
     <link href="https://fonts.cdnfonts.com/css/waltograph" rel="stylesheet">
-</head>
+    </head>
 
-<body>
+
  <div class="disney">
 
- <img src="Portadas/Disney_title.png" alt="disney Title" class="disney-image">
+ <img src="Portadas/disney_title.png" alt="disney Title" class="disney-image">
 
 <video autoplay muted loop>
         <source src="bg.mp4" type="video/mp4">
@@ -22,74 +22,68 @@
 
     <h2>Te amo mi princesa</h2>
 
+<div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- Enlace de video como iframe -->
+            <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
     <ul class="movie-list">
-        <li>
-            <a href="https://drive.google.com/file/d/1anoTicImOI9qebeG3CIRX-zQbgZCMc9Z/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada1.jpg" alt="Portada Película 1" class="movie-img"> <!-- Imagen de portada -->
+<li>
+<img class="movie-img" src="Portadas/portada1.jpg" data-video-url="https://drive.google.com/file/d/1anoTicImOI9qebeG3CIRX-zQbgZCMc9Z/preview" alt="Ver Video 1">
 
-            </a>
 </li>
                 <li>
-            <a href="https://drive.google.com/file/d/1zUzqCKq7jVIB9UqcN0Z0hcQAmEhnmv1x/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada6.jpg" alt="Portada Película 6" class="movie-img">
-
-            </a>
-</li>
+<img class="movie-img" src="Portadas/portada6.jpg" data-video-url="https://drive.google.com/file/d/1zUzqCKq7jVIB9UqcN0Z0hcQAmEhnmv1x/preview" alt=Ver Video 6" >
+                </li>
 
 <li>
-            <a href="https://drive.google.com/file/d/1CmEXCMfEYnceKDYyuc5NZBIrnTUWAJB0/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada8.jpg" alt="Portada Película 8" class="movie-img">
-            </a>
-        </li>
-<li>
-            <a href="https://drive.google.com/file/d/1hR3gjtsfQ6OxORyHeS1NenwnfG40QHt-/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada10.jpg" alt="Portada Película 10" class="movie-img">
-            </a>
-        </li>
+<img class="movie-img" src="Portadas/portada8.jpg" data-video-url="https://drive.google.com/file/d/1CmEXCMfEYnceKDYyuc5NZBIrnTUWAJB0/preview" alt=Ver Video 8" >
+                </li>
 
-               <li>
-            <a href="https://drive.google.com/file/d/1DT--BK14YtML-_-p9H2_7Z0oQOhPXU59/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada29.jpg" alt="Portada Película 29" class="movie-img">
-            </a>
-        </li>
+<li>
+<img class="movie-img" src="Portadas/portada10.jpg" data-video-url="https://drive.google.com/file/d/1hR3gjtsfQ6OxORyHeS1NenwnfG40QHt-/preview" alt=Ver Video 10" >
+                </li>
+
+
+<li>
+<img class="movie-img" src="Portadas/portada29.jpg" data-video-url="https://drive.google.com/file/d/1DT--BK14YtML-_-p9H2_7Z0oQOhPXU59/preview" alt=Ver Video 29" >
+                </li>
+
         <li>
-            <a href="https://drive.google.com/file/d/1UhZNx1XOMfQ6wybD5Lym7Nq4vAOZC7Tc/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada30.jpg" alt="Portada Película 30" class="movie-img">
-            </a>
-        </li>
-	    <li>
-            <a href="" class="movie-link">
-                <img src="Portadas/portada36.jpg" alt="Portada Película 36" class="movie-img">
-            </a>
-        </li>
+<img class="movie-img" src="Portadas/portada30.jpg" data-video-url="https://drive.google.com/file/d/1UhZNx1XOMfQ6wybD5Lym7Nq4vAOZC7Tc/preview" alt=Ver Video 30" >
+                </li>
+        
 <li>
-            <a href="https://drive.google.com/file/d/1crVi4T3wWjinhGPfX87zVad1NOnFI1ix/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada39.jpg" alt="Portada Película 39" class="movie-img">
-            </a>
-        </li>
+<img class="movie-img" src="Portadas/portada36.jpg" data-video-url="https://drive.google.com/file/d/1JKs8J6fx5czK0bqh2vQDyebTk27vIvdV/preview" alt=Ver Video 36" >
+                </li>
 
-                <li>
-            <a href="https://drive.google.com/file/d/11GeysEnxY5E2EK7UOf-2mK0R1E6Rhst9/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada45.jpg" alt="Portada Película 45" class="movie-img">
-            </a>
-        </li>
-	    <li>
-            <a href="https://drive.google.com/file/d/10TZk5_laDqyKzKvPOY5y-YETCuvQ4HIl/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada53.jpg" alt="Portada Película 53" class="movie-img">
-            </a>
-        </li>
-  <li>
-            <a href="https://drive.google.com/file/d/1o-pTVQlFUPice65aM2kdPxN-jJUwkoWW/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada54.jpg" alt="Portada Película 54" class="movie-img">
-            </a>
-        </li>
+
 <li>
-            <a href="https://drive.google.com/file/d/1d6dndsNiowSVjBqxGxQ-IK_OhHMkA-QD/view?usp=sharing" class="movie-link">
-                <img src="Portadas/portada55.jpg" alt="Portada Película 55" class="movie-img">
-            </a>
-        </li>
+<img class="movie-img" src="Portadas/portada39.jpg" data-video-url="https://drive.google.com/file/d/1crVi4T3wWjinhGPfX87zVad1NOnFI1ix/preview" alt=Ver Video 39" >
+                </li>
 
-	     
+	<li>
+<img class="movie-img" src="Portadas/portada45.jpg" data-video-url="https://drive.google.com/file/d/11GeysEnxY5E2EK7UOf-2mK0R1E6Rhst9/preview" alt=Ver Video 45" >
+                </li>
+
+
+            <li>
+<img class="movie-img" src="Portadas/portada53.jpg" data-video-url="https://drive.google.com/file/d/10TZk5_laDqyKzKvPOY5y-YETCuvQ4HIl/preview" alt=Ver Video 53" >
+                </li>
+
+	 
+<li>
+<img class="movie-img" src="Portadas/portada54.jpg" data-video-url="https://drive.google.com/file/d/1o-pTVQlFUPice65aM2kdPxN-jJUwkoWW/preview" alt=Ver Video 54" >
+                </li>
+
+<li>
+<img class="movie-img" src="Portadas/portada55.jpg" data-video-url="https://drive.google.com/file/d/1d6dndsNiowSVjBqxGxQ-IK_OhHMkA-QD/preview" alt=Ver Video 55" >
+                </li>
+     
     </ul>
 </div>
 
@@ -104,12 +98,12 @@
  <ul class="marvel-movie-list">
        
             <li>
-                <a href="https://drive.google.com/file/d/1kiUpsd7ptCQXPTmoo6EwIxeqqoFL2wN0/view?usp=sharing" class="movie-link">
+                <a href="https://drive.google.com/file/d/1kiUpsd7ptCQXPTmoo6EwIxeqqoFL2wN0/preview" class="movie-link">
                     <img src="Portadas/marvel1.jpg" alt="Portada Marvel 1" class="movie-img">
                 </a>
             </li>
             <li>
-                <a href="https://drive.google.com/file/d/1QZsZeq_0QDmKjsBHetlurjvcV7wB8-kz/view?usp=sharing" class="movie-link">
+                <a href="https://drive.google.com/file/d/1QZsZeq_0QDmKjsBHetlurjvcV7wB8-kz/preview" class="movie-link">
                     <img src="Portadas/marvel2.jpg" alt="Portada Marvel 2" class="movie-img">
                 </a>
             </li>
@@ -156,15 +150,25 @@
             <li>    
 				<img src="Portadas/gaseason1.jpg" alt="GA season 1" class="season-img">
                 <div class="caps">
-                    <a href="https://drive.google.com/file/d/1IDCLushtHv8pL__DD5lluLWOrkRwGHZr/view?usp=sharing">Capítulo 1</a>
-                    <a href="https://drive.google.com/file/d/10Qy8DgFr2NZyneTmkCZ9OfVdsyZ7HPbL/view?usp=sharing">Capítulo 2</a>
-                    <a href="https://drive.google.com/file/d/15uoIPv15pa8evbuIZ4qA7yeUfWly9l67/view?usp=sharing">Capítulo 3</a>
-                    <a href="https://drive.google.com/file/d/1RHDCAK_sEyN8VQzNnKpjRjfE-aZ9gAFb/view?usp=sharing">Capítulo 4</a>
-                    <a href="https://drive.google.com/file/d/1lc_aNfk_UyRfDkop-1gdOPn5B8n2623Y/view?usp=sharing">Capítulo 5</a>
-                    <a href="https://drive.google.com/file/d/1X1zPNB38szdkivkH-AoaMNiDNvO8vDTo/view?usp=sharing">Capítulo 6</a>
-                    <a href="https://drive.google.com/file/d/1x4HQrQYduEENsG8wXwHX-EYI2RZ1xJ-5/view?usp=sharing">Capítulo 7</a>
-                    <a href="https://drive.google.com/file/d/1pDTN2Je0hOeQVaaRTdDA8rVqeu5PySbd/view?usp=sharing">Capítulo 8</a>
-                    <a href="https://drive.google.com/file/d/1Ter8L2Jxk8W_YRFkXbss8jrSXtx7jc1c/view?usp=sharing">Capítulo 9</a>
+
+<a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1IDCLushtHv8pL__DD5lluLWOrkRwGHZr/preview">Capítulo 1</a>
+
+                    <a 
+href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/10Qy8DgFr2NZyneTmkCZ9OfVdsyZ7HPbL/preview">Capítulo 2</a>
+                    <a 
+href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/15uoIPv15pa8evbuIZ4qA7yeUfWly9l67/preview">Capítulo 3</a>
+                    <a 
+href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1RHDCAK_sEyN8VQzNnKpjRjfE-aZ9gAFb/preview">Capítulo 4</a>
+                    <a 
+href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1lc_aNfk_UyRfDkop-1gdOPn5B8n2623Y/preview">Capítulo 5</a>
+                    <a 
+href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1X1zPNB38szdkivkH-AoaMNiDNvO8vDTo/preview">Capítulo 6</a>
+                    <a 
+href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1x4HQrQYduEENsG8wXwHX-EYI2RZ1xJ-5/preview">Capítulo 7</a>
+                    <a 
+href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1pDTN2Je0hOeQVaaRTdDA8rVqeu5PySbd/preview">Capítulo 8</a>
+                    <a 
+href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1Ter8L2Jxk8W_YRFkXbss8jrSXtx7jc1c/preview">Capítulo 9</a>
                 </div>
             </li>
 			
@@ -173,33 +177,33 @@
 		<li>                  
                 <img src="Portadas/gaseason2.jpg" alt="GA season 2" class="season-img">
                 <div class="caps">
-                    <a href="https://drive.google.com/file/d/1QLfy69Usiy10V2icHMpr-u3PLKNx1PY6/view?usp=sharing">Capítulo 1</a>
-                    <a href="https://drive.google.com/file/d/1vjc-bGRjjE-1lRtt1d0b1VL62F9jXDmh/view?usp=sharing">Capítulo 2</a>
-                    <a href="https://drive.google.com/file/d/1UWXwl0Be4BOIAde2jB1rh9rcvYzy0sKw/view?usp=sharing">Capítulo 3</a>
-                    <a href="https://drive.google.com/file/d/1S5gyMuDHUg7UmtqUcwg0Z2WA4WagVDrT/view?usp=sharing">Capítulo 4</a>
-                    <a href="https://drive.google.com/file/d/15VaUe2WL8jUucatWnBc2KoVFUYmKG82-/view?usp=sharing">Capítulo 5</a>
-                    <a href="https://drive.google.com/file/d/1pPycLyBeUjYCBiuW8FA_RSlKGnyDlqE7/view?usp=sharing">Capítulo 6</a>
-                    <a href="https://drive.google.com/file/d/1D0yw_VZosli2vA9xJHmz5MHsSxuoQTls/view?usp=sharing">Capítulo 7</a>
-                    <a href="https://drive.google.com/file/d/1q8Qro_oEESqlJITj5_HXVdGPo1dRhpA7/view?usp=sharing">Capítulo 8</a>
-                    <a href="https://drive.google.com/file/d/1A_PQE4qECYq5qswEKF37Nwha_N-E2Qhm/view?usp=sharing">Capítulo 9</a>
-                    <a href="https://drive.google.com/file/d/1uzYCiUYKwzgu4Zvtem89pm03-kWJV4J1/view?usp=sharing">Capítulo 10</a>
-                    <a href="https://drive.google.com/file/d/18UPpwoujfKu5zRdv-lZNEMGqyrJynOkC/view?usp=sharing">Capítulo 11</a>
-                    <a href="https://drive.google.com/file/d/1SEDbLaB3dLxMbvMZShwZLZg40BkvLa3h/view?usp=sharing">Capítulo 12</a>
-                    <a href="https://drive.google.com/file/d/1pD_74XKiksIT4F0bijO6EI58UZElD_2b/view?usp=sharing">Capítulo 13</a>
-                    <a href="https://drive.google.com/file/d/1Hu8TDSgSn2fxBvfmONEKVBlgjs3hQTrN/view?usp=sharing">Capítulo 14</a>
-                    <a href="https://drive.google.com/file/d/1TO8pJWUEvrLYxaMyU52Uuy3gu8oNkhsl/view?usp=sharing">Capítulo 15</a>
-                    <a href="https://drive.google.com/file/d/1xRIUq0zZBEcc1IpD4bMXPlGnPlwUy3Kf/view?usp=sharing">Capítulo 16</a>
-                    <a href="https://drive.google.com/file/d/1yNdUPXsLaUGdjpF1CxxFrw7pUIbylHzy/view?usp=sharing">Capítulo 17</a>
-                    <a href="https://drive.google.com/file/d/1cObLpcBnvnVzQJWL-VjiDN3FcYvIDn7Q/view?usp=sharing">Capítulo 18</a>
-                    <a href="https://drive.google.com/file/d/1oE3LHesKw-0FlvH8-J6DwN-n-0OA6sGi/view?usp=sharing">Capítulo 19</a>
-                    <a href="https://drive.google.com/file/d/17p9q3ow3OH9cffR_cYaDqS9AX4dmm3PO/view?usp=sharing">Capítulo 20</a>
-                    <a href="https://drive.google.com/file/d/1azp0zwBiuDSArY4sBDfniCcIptZ2DR6A/view?usp=sharing">Capítulo 21</a>
-                    <a href="https://drive.google.com/file/d/1wOTkViuetZAqxRGnHyU1x6Dfend4fa2v/view?usp=sharing">Capítulo 22</a>
-                    <a href="https://drive.google.com/file/d/1PJq_IwMAg53kjHmuUVg1AveJujr-Bj5i/view?usp=sharing">Capítulo 23</a>
-                    <a href="https://drive.google.com/file/d/1x6skL2NAmT16nY71IiWf54-UoyYGUxZG/view?usp=sharing">Capítulo 24</a>
-                    <a href="https://drive.google.com/file/d/1a4hq5ir8IotAAJfoYkk4AP6Akj-HFfmZ/view?usp=sharing">Capítulo 25</a>
-                    <a href="https://drive.google.com/file/d/1BeQ3GTVdO2jMwcjRwyjWy4H5iBLKCJCn/view?usp=sharing">Capítulo 26</a>
-                    <a href="https://drive.google.com/file/d/1DAjESt7ZgiOhcrJCG4FS401fzPnQ5DHt/view?usp=sharing">Capítulo 27</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1QLfy69Usiy10V2icHMpr-u3PLKNx1PY6/preview">Capítulo 1</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1vjc-bGRjjE-1lRtt1d0b1VL62F9jXDmh/preview">Capítulo 2</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1UWXwl0Be4BOIAde2jB1rh9rcvYzy0sKw/preview">Capítulo 3</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1S5gyMuDHUg7UmtqUcwg0Z2WA4WagVDrT/preview">Capítulo 4</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/15VaUe2WL8jUucatWnBc2KoVFUYmKG82-/preview">Capítulo 5</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1pPycLyBeUjYCBiuW8FA_RSlKGnyDlqE7/preview">Capítulo 6</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1D0yw_VZosli2vA9xJHmz5MHsSxuoQTls/preview">Capítulo 7</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1q8Qro_oEESqlJITj5_HXVdGPo1dRhpA7/preview">Capítulo 8</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1A_PQE4qECYq5qswEKF37Nwha_N-E2Qhm/preview">Capítulo 9</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1uzYCiUYKwzgu4Zvtem89pm03-kWJV4J1/preview">Capítulo 10</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/18UPpwoujfKu5zRdv-lZNEMGqyrJynOkC/preview">Capítulo 11</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1SEDbLaB3dLxMbvMZShwZLZg40BkvLa3h/preview">Capítulo 12</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1pD_74XKiksIT4F0bijO6EI58UZElD_2b/preview">Capítulo 13</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1Hu8TDSgSn2fxBvfmONEKVBlgjs3hQTrN/preview">Capítulo 14</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1TO8pJWUEvrLYxaMyU52Uuy3gu8oNkhsl/preview">Capítulo 15</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1xRIUq0zZBEcc1IpD4bMXPlGnPlwUy3Kf/preview">Capítulo 16</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1yNdUPXsLaUGdjpF1CxxFrw7pUIbylHzy/preview">Capítulo 17</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1cObLpcBnvnVzQJWL-VjiDN3FcYvIDn7Q/preview">Capítulo 18</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1oE3LHesKw-0FlvH8-J6DwN-n-0OA6sGi/preview">Capítulo 19</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/17p9q3ow3OH9cffR_cYaDqS9AX4dmm3PO/preview">Capítulo 20</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1azp0zwBiuDSArY4sBDfniCcIptZ2DR6A/preview">Capítulo 21</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1wOTkViuetZAqxRGnHyU1x6Dfend4fa2v/preview">Capítulo 22</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1PJq_IwMAg53kjHmuUVg1AveJujr-Bj5i/preview">Capítulo 23</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1x6skL2NAmT16nY71IiWf54-UoyYGUxZG/preview">Capítulo 24</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1a4hq5ir8IotAAJfoYkk4AP6Akj-HFfmZ/preview">Capítulo 25</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1BeQ3GTVdO2jMwcjRwyjWy4H5iBLKCJCn/preview">Capítulo 26</a>
+                    <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1DAjESt7ZgiOhcrJCG4FS401fzPnQ5DHt/preview">Capítulo 27</a>
 </div>
 	   </li>
 <li>    
@@ -246,49 +250,49 @@
             <li>    
 				<img src="Portadas/naseason1.png" alt="NA season 1" class="season-img">
 <div class="caps">
-<a href="https://drive.google.com/file/d/1wbE-7q1rzpctwFYRUHMk6CmYo33utiGp/view?usp=sharing">Capítulo 1</a>
+<a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1wbE-7q1rzpctwFYRUHMk6CmYo33utiGp/preview">Capítulo 1</a>
 
- <a href="https://drive.google.com/file/d/1tXDQ5wDdnIc20HXYdAo488yb2rDiNJRL/view?usp=sharing">Capítulo 2</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1tXDQ5wDdnIc20HXYdAo488yb2rDiNJRL/preview">Capítulo 2</a>
 
- <a href="https://drive.google.com/file/d/1Q1LLauBe67grRDYDIIoqQL46I4u0khs2/view?usp=sharing">Capítulo 3</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1Q1LLauBe67grRDYDIIoqQL46I4u0khs2/preview">Capítulo 3</a>
 
- <a href="https://drive.google.com/file/d/1NZHHgVsIPd0QtoFMEvONpJGuz_oToPPx/view?usp=sharing">Capítulo 4</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1NZHHgVsIPd0QtoFMEvONpJGuz_oToPPx/preview">Capítulo 4</a>
 
- <a href="https://drive.google.com/file/d/16W1XnzMrzCgcG9ITDoJKDHqO9n5AH6KQ/view?usp=sharing">Capítulo 5</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/16W1XnzMrzCgcG9ITDoJKDHqO9n5AH6KQ/preview">Capítulo 5</a>
 
- <a href="https://drive.google.com/file/d/1Pbyj4hTaOzPqmBRTJ73SJdRzoiLSM4ie/view?usp=sharing">Capítulo 6</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1Pbyj4hTaOzPqmBRTJ73SJdRzoiLSM4ie/preview">Capítulo 6</a>
 
- <a href="https://drive.google.com/file/d/1q3Mgn5TBWX_W7AWwhut1K6fKr5D5T10H/view?usp=sharing">Capítulo 7</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1q3Mgn5TBWX_W7AWwhut1K6fKr5D5T10H/preview">Capítulo 7</a>
 
- <a href="https://drive.google.com/file/d/1unUeKSe6B5fLLwjg-Ku0nLGR_IayzBYd/view?usp=sharing">Capítulo 8</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1unUeKSe6B5fLLwjg-Ku0nLGR_IayzBYd/preview">Capítulo 8</a>
 
- <a href="https://drive.google.com/file/d/1v6HuddslBKVSlHsS6Wy3_Q4atsgYWRxI/view?usp=sharing">Capítulo 9</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1v6HuddslBKVSlHsS6Wy3_Q4atsgYWRxI/preview">Capítulo 9</a>
 
- <a href="https://drive.google.com/file/d/1dCY_4RMnkVJW9NdqpwujvSXwMMtCjnLr/view?usp=sharing">Capítulo 10</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1dCY_4RMnkVJW9NdqpwujvSXwMMtCjnLr/preview">Capítulo 10</a>
 
- <a href="https://drive.google.com/file/d/1R0umcmXG2uVXmjcRRPSG2ZDBYwb3pnHa/view?usp=sharing">Capítulo 11</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1R0umcmXG2uVXmjcRRPSG2ZDBYwb3pnHa/preview">Capítulo 11</a>
 
- <a href="https://drive.google.com/file/d/1QwcAw1G1sahSN6Zp_A6JRopH0OQAk6DP/view?usp=sharing">Capítulo 12</a>
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1QwcAw1G1sahSN6Zp_A6JRopH0OQAk6DP/preview">Capítulo 12</a>
 
- <a href="">Capítulo 13</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 13</a>
 
- <a href="">Capítulo 14</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 14</a>
 
- <a href="">Capítulo 15</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 15</a>
 
- <a href="">Capítulo 16</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 16</a>
 
- <a href="">Capítulo 17</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 17</a>
 
- <a href="">Capítulo 18</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 18</a>
 
- <a href="">Capítulo 19</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 19</a>
 
- <a href="">Capítulo 20</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 20</a>
 
- <a href="">Capítulo 21</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 21</a>
 
- <a href="">Capítulo 22</a>
+ <a href="javascript:void(0);" data-video-url="">Capítulo 22</a>
 
          </div>
 	   </li>
@@ -316,6 +320,7 @@
       </ul>
 </div>
 
+<iframe name="movie-iframe" src="" frameborder="0"></iframe>
 
 
 
@@ -330,13 +335,81 @@
             });
         });
     </script>
+
 <script>
-        function openFile(event, fileName) {
-            event.preventDefault(); // Evita que el enlace se siga por defecto
-            // Intenta abrir el archivo en una nueva ventana
-            window.open(fileName, '_blank');
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtén el enlace y el contenedor del iframe
+    var movieLink = document.getElementById('portada6');
+    var iframeContainer = document.getElementById('iframe-container');
+    var iframe = document.getElementById('movie-iframe');
+    
+    // Añade un evento de clic al enlace
+    movieLink.addEventListener('click', function(event) {
+      // Previene el comportamiento por defecto del enlace
+      event.preventDefault();
+      
+      // Muestra el contenedor del iframe
+      iframeContainer.style.display = 'block';
+      
+      // Establece la URL del iframe
+      iframe.src = 'https://drive.google.com/file/d/1zUzqCKq7jVIB9UqcN0Z0hcQAmEhnmv1x/preview';
+    });
+  });
+</script>
+
+<script>
+        // Obtener el modal y el iframe
+        var modal = document.getElementById("myModal");
+        var iframe = document.getElementById("videoFrame");
+
+      
+
+        // Función para abrir el modal con el video específico
+        function openModal(videoUrl) {
+            iframe.src = videoUrl; // Establece la URL del video
+            modal.style.display = "block";
+            // Solicitar pantalla completa del iframe
+            requestFullscreen(iframe);
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            modal.style.display = "none";
+            iframe.src = ""; // Limpiar el src para detener el video
+        }
+
+        // Manejar clic en las imágenes de video
+        var images = document.getElementsByClassName("movie-img");
+        for (var i = 0; i < images.length; i++) {
+            images[i].addEventListener("click", function() {
+                var videoUrl = this.getAttribute("data-video-url");
+                openModal(videoUrl);
+            });
+        }
+
+        // Manejar clic en el botón de cierre
+        var closeButton = document.getElementsByClassName("close")[0];
+        closeButton.onclick = closeModal;
+
+        // Manejar clic fuera del contenido del modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
         }
     </script>
+
+<script>
+var links = document.querySelectorAll(".caps a");
+        links.forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+                var videoUrl = this.getAttribute("data-video-url");
+                openModal(videoUrl);
+            });
+        });
+</script>
+
 </body>
 </html>
 
