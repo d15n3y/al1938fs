@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap">
+
+
+    <title>Grey's Anatomy - Temporada 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: top;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Portadas/greysbackground.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    opacity: 1; /* Controla la opacidad del fondo */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 90%;
+            height: 420px;
+            margin: auto;
+            padding: 20px;
+        }
+        .episodes {
+            width: 35%;
+            overflow-y: auto;
+            background-color: rgba(255, 255, 255, 0.4); /* Fondo blanco con transparencia */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+        .video-container {
+            width: 60%;
+            position: relative;
+        }
+        h1 {
+    text-align: center;
+    color: transparent; /* Hace que el texto sea transparente */
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 0;
+    -webkit-text-stroke: 1px black; /* Aplica un borde fino negro al texto */
+}
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        li input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            flex: 1;
+        }
+        li a:hover {
+            color: #007BFF;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .arrow-button {
+            position: absolute;
+            top: 10px;
+            right: 5%;
+            padding: 10px 15px;
+            background-color: gray;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .arrow-button::before {
+            content: '→';
+            font-size: 4vh;
+        }
+        .arrow-button:hover {
+            background-color: #0056b3;
+        }
+        .close-button {
+            color: white; position: absolute; top: 9.5px; right: 11px; font-size: 24px; font-weight: bold; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px; cursor: pointer; opacity: 60%; 
+        }
+        .close-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para la barra de desplazamiento (scrollbar) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2); /* Color oscuro con transparencia */
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent; /* Hacer la pista del scrollbar transparente */
+        }
+    </style>
+
+    <script>
+        function cargarEpisodio(url) {
+            document.getElementById('VideoFrame').src = url;
+        }
+
+        function toggleFullScreen() {
+            const iframe = document.getElementById('VideoFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        // Bloquear el clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</head>
+<body>
+
+    <button class="arrow-button" onclick="window.location.href='GAT2.html'"></button>
+
+
+    <h1>Grey's Anatomy - Temporada 2</h1>
+
+    <div class="container">
+        <div class="episodes">
+            <ul>
+    <li><input type="checkbox" id="ep1-2"><label for="ep1-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1QLfy69Usiy10V2icHMpr-u3PLKNx1PY6/preview')">Capítulo 1: "Raindrops Keep Falling on My Head"</a></label></li>
+    <li><input type="checkbox" id="ep2-2"><label for="ep2-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1vjc-bGRjjE-1lRtt1d0b1VL62F9jXDmh/preview')">Capítulo 2: "Enough is Enough (No More Tears)"</a></label></li>
+    <li><input type="checkbox" id="ep3-2"><label for="ep3-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1UWXwl0Be4BOIAde2jB1rh9rcvYzy0sKw/preview')">Capítulo 3: "Make Me Lose Control"</a></label></li>
+    <li><input type="checkbox" id="ep4-2"><label for="ep4-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1S5gyMuDHUg7UmtqUcwg0Z2WA4WagVDrT/preview')">Capítulo 4: "Denial, Anger, Acceptance"</a></label></li>
+    <li><input type="checkbox" id="ep5-2"><label for="ep5-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/15VaUe2WL8jUucatWnBc2KoVFUYmKG82-/preview')">Capítulo 5: "Bring the Pain"</a></label></li>
+    <li><input type="checkbox" id="ep6-2"><label for="ep6-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1pPycLyBeUjYCBiuW8FA_RSlKGnyDlqE7/preview')">Capítulo 6: "Into You Like a Train"</a></label></li>
+    <li><input type="checkbox" id="ep7-2"><label for="ep7-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1D0yw_VZosli2vA9xJHmz5MHsSxuoQTls/preview')">Capítulo 7: "Something to Talk About"</a></label></li>
+    <li><input type="checkbox" id="ep8-2"><label for="ep8-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1q8Qro_oEESqlJITj5_HXVdGPo1dRhpA7/preview')">Capítulo 8: "A Hard Day's Night"</a></label></li>
+    <li><input type="checkbox" id="ep9-2"><label for="ep9-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1A_PQE4qECYq5qswEKF37Nwha_N-E2Qhm/preview')">Capítulo 9: "Thanks for the Memories"</a></label></li>
+    <li><input type="checkbox" id="ep10-2"><label for="ep10-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1uzYCiUYKwzgu4Zvtem89pm03-kWJV4J1/preview')">Capítulo 10: "Much Too Much"</a></label></li>
+    <li><input type="checkbox" id="ep11-2"><label for="ep11-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/18UPpwoujfKu5zRdv-lZNEMGqyrJynOkC/preview')">Capítulo 11: "Owner of a Lonely Heart"</a></label></li>
+    <li><input type="checkbox" id="ep12-2"><label for="ep12-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1SEDbLaB3dLxMbvMZShwZLZg40BkvLa3h/preview')">Capítulo 12: "As We Know It"</a></label></li>
+    <li><input type="checkbox" id="ep13-2"><label for="ep13-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1pD_74XKiksIT4F0bijO6EI58UZElD_2b/preview')">Capítulo 13: "Begin the Begin"</a></label></li>
+    <li><input type="checkbox" id="ep14-2"><label for="ep14-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1Hu8TDSgSn2fxBvfmONEKVBlgjs3hQTrN/preview')">Capítulo 14: "The Name of the Game"</a></label></li>
+    <li><input type="checkbox" id="ep15-2"><label for="ep15-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1TO8pJWUEvrLYxaMyU52Uuy3gu8oNkhsl/preview')">Capítulo 15: "Losing My Religion"</a></label></li>
+    <li><input type="checkbox" id="ep16-2"><label for="ep16-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1xRIUq0zZBEcc1IpD4bMXPlGnPlwUy3Kf/preview')">Capítulo 16: "It's the End of the World"</a></label></li>
+    <li><input type="checkbox" id="ep17-2"><label for="ep17-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1yNdUPXsLaUGdjpF1CxxFrw7pUIbylHzy/preview')">Capítulo 17: "As We Know It"</a></label></li>
+    <li><input type="checkbox" id="ep18-2"><label for="ep18-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1cObLpcBnvnVzQJWL-VjiDN3FcYvIDn7Q/preview')">Capítulo 18: "The Other Side of This Life - Part 1"</a></label></li>
+    <li><input type="checkbox" id="ep19-2"><label for="ep19-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1oE3LHesKw-0FlvH8-J6DwN-n-0OA6sGi/preview')">Capítulo 19: "The Other Side of This Life - Part 2"</a></label></li>
+    <li><input type="checkbox" id="ep20-2"><label for="ep20-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/17p9q3ow3OH9cffR_cYaDqS9AX4dmm3PO/preview')">Capítulo 20: "Bionic Woman"</a></label></li>
+    <li><input type="checkbox" id="ep21-2"><label for="ep21-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1azp0zwBiuDSArY4sBDfniCcIptZ2DR6A/preview')">Capítulo 21: "Superfreak"</a></label></li>
+    <li><input type="checkbox" id="ep22-2"><label for="ep22-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1wOTkViuetZAqxRGnHyU1x6Dfend4fa2v/preview')">Capítulo 22: "The Last One"</a></label></li>
+    <li><input type="checkbox" id="ep23-2"><label for="ep23-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1PJq_IwMAg53kjHmuUVg1AveJujr-Bj5i/preview')">Capítulo 23: "Losing My Religion"</a></label></li>
+    <li><input type="checkbox" id="ep24-2"><label for="ep24-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1x6skL2NAmT16nY71IiWf54-UoyYGUxZG/preview')">Capítulo 24: "As We Know It"</a></label></li>
+    <li><input type="checkbox" id="ep25-2"><label for="ep25-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1a4hq5ir8IotAAJfoYkk4AP6Akj-HFfmZ/preview')">Capítulo 25: "The Name of the Game"</a></label></li>
+    <li><input type="checkbox" id="ep26-2"><label for="ep26-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1BeQ3GTVdO2jMwcjRwyjWy4H5iBLKCJCn/preview')">Capítulo 26: "It's the End of the World"</a></label></li>
+    <li><input type="checkbox" id="ep27-2"><label for="ep27-2"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1DAjESt7ZgiOhcrJCG4FS401fzPnQ5DHt/preview')">Capítulo 27: "Superfreak"</a></label></li>
+</ul>
+
+        </div>
+        <div class="video-container">
+<button class="close-button" onclick="cerrarVideo()">×</button>
+            <iframe id="VideoFrame" src="https://drive.google.com/file/d/1QLfy69Usiy10V2icHMpr-u3PLKNx1PY6/preview" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Selecciona todos los enlaces en la página
+            const links = document.querySelectorAll('a');
+            
+            // Añade un evento de clic a cada enlace
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    // Verifica si el enlace tiene un atributo 'target' que abre una nueva ventana
+                    if (link.target === '_blank') {
+                        // Previene el comportamiento predeterminado
+                        event.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
