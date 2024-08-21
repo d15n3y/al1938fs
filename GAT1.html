@@ -193,15 +193,12 @@ h1 {
     </div>
 
 <script>
-// Obtener el nombre del usuario logueado
-const username = localStorage.getItem('loggedInUser');
 
 // Función para guardar el estado de todos los checkboxes
 function saveCheckboxStates() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach(checkbox => {
-    // Guardar el estado del checkbox con una clave que incluye el nombre del usuario
-    localStorage.setItem(`${username}_${checkbox.id}`, checkbox.checked);
+    localStorage.setItem(checkbox.id, checkbox.checked);
   });
 }
 
@@ -209,8 +206,7 @@ function saveCheckboxStates() {
 function loadCheckboxStates() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach(checkbox => {
-    // Recuperar el estado del checkbox con una clave que incluye el nombre del usuario
-    const savedState = localStorage.getItem(`${username}_${checkbox.id}`) === 'true';
+    const savedState = localStorage.getItem(checkbox.id) === 'true';
     checkbox.checked = savedState;
   });
 }
@@ -223,6 +219,7 @@ document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
 // Cargar el estado cuando se carga la página
 window.addEventListener('load', loadCheckboxStates);
 </script>
+
 
     
 </body>
