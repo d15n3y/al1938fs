@@ -192,6 +192,33 @@ h1 {
         </div>
     </div>
 
+<script>
+
+// Función para guardar el estado de todos los checkboxes
+function saveCheckboxStates() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    localStorage.setItem(checkbox.id, checkbox.checked);
+  });
+}
+
+// Función para cargar el estado de todos los checkboxes
+function loadCheckboxStates() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    const savedState = localStorage.getItem(checkbox.id) === 'true';
+    checkbox.checked = savedState;
+  });
+}
+
+// Configurar los eventos
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+  checkbox.addEventListener('change', saveCheckboxStates);
+});
+
+// Cargar el estado cuando se carga la página
+window.addEventListener('load', loadCheckboxStates);
+</script>
     
 </body>
 </html>
