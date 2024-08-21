@@ -1,136 +1,538 @@
-body { background-color: none; font-family: Arial, sans-serif; text-align: center; color: white; margin: 0; height: 0vh; overflow-y: auto; position: relative; z-index: 1; } 
-
-.disney { position: relative; } .disney video { opacity: 100%; position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; } 
-
-.marvel {
-    position: relative;
-    z-index: 0; 
-}
-
-.marvel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('Portadas/marvelb.jpg');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    opacity: 0.8;     
-z-index: -1; 
-}
-
-.ganatomy { position: relative; z-index: 0; } 
-
-.ganatomy::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('Portadas/ganatomyb.jpg');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    opacity: 0.8;     
-z-index: -1; 
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Disney</title>
+    <link rel="icon" type="image/ico" href="Portadas/icon.ico"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <link href="https://fonts.cdnfonts.com/css/waltograph" rel="stylesheet">
+    </head>
 
 
-.namsterdam { position: relative; z-index: 0; } 
+ <div class="disney">
 
-.namsterdam::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('Portadas/namsterdamb.jpg');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    opacity: 0.9;     
-z-index: -1; 
-}
+ <img src="Portadas/Disney_title.png" alt="disney Title" class="disney-image">
 
-.got { position: relative; z-index: 0; } 
+<video autoplay muted loop>
+        <source src="bg.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
 
-.got::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('Portadas/gotb.jpg');
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    opacity: 0.9;     
-z-index: -1; 
-}
+    <h2>Te amo mi princesa</h2>
 
-.tboys { position: relative; z-index: 0; } 
-
-.tboys::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('Portadas/tbb.jpg');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    opacity: 1;     
-z-index: -1; 
-}
+<div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- Enlace de video como iframe -->
+            <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 
 
-.dreamworks { position: relative; z-index: 0; } 
-
-.dreamworks::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('Portadas/dreamworksb.jpg');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    opacity: 0.9;     
-z-index: -1; 
-}
+    <ul class="movie-list">
+<li>
+<img class="movie-img" src="Portadas/portada1.jpg" data-video-url="https://drive.google.com/file/d/1anoTicImOI9qebeG3CIRX-zQbgZCMc9Z/preview" alt="Ver Video 1">
+</li>
 
 
-.disney-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 10%; text-align: center; } .marvel-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } .ganatomy-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } .na-image { width: 34%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
-
-.got-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
-
-.tboys-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
-
-.dreamworks-image { width: 34%; height: auto; margin-bottom: 0%; margin-top: 1%; text-align: center; } 
-
-h2 { margin-top: -8%; font-family: 'Waltograph', sans-serif; font-size: 2em; font-weight: bold; color: #FFFFFF; text-align: right; margin-right: 5%; } .movie-list { list-style: none; position: relative; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 8%; margin-bottom: 0%; width: 100%; overflow: auto; } .movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } .marvel-movie-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } 
+                <li>
+<img class="movie-img" src="Portadas/portada6.jpg" data-video-url="https://drive.google.com/file/d/1zUzqCKq7jVIB9UqcN0Z0hcQAmEhnmv1x/preview" alt=Ver Video 6" >
+                </li>
 
 
-.marvel-movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .marvel-movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } .gaseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .gaseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .gaseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } .naseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .naseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .naseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } 
 
-.gotseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .gotseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .gotseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+<li>
+<img class="movie-img" src="Portadas/portada8.jpg" data-video-url="https://drive.google.com/file/d/1CmEXCMfEYnceKDYyuc5NZBIrnTUWAJB0/preview" alt=Ver Video 8" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada9.jpg" data-video-url="https://drive.google.com/file/d/1-ZEFrFfcpPEyYKIQzQubg7BbbPb23iA8/preview" alt=Ver Video 9" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada10.jpg" data-video-url="https://drive.google.com/file/d/1hR3gjtsfQ6OxORyHeS1NenwnfG40QHt-/preview" alt=Ver Video 10" >
+                </li>
 
-.tbseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; width: 100%; overflow: auto; } .tbseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .tbseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
 
 
-.dreamworks-movie-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .dreamworks-movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .dreamworks-movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+<li>
+<img class="movie-img" src="Portadas/portada20.jpg" data-video-url="https://drive.google.com/file/d/1LKGQ62EyN6PUDYpri5WJcGULqZruexTH/preview" alt=Ver Video 20" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada21.jpg" data-video-url="https://drive.google.com/file/d/145GNxnnc5_zX_VfwRov6vP1Y2L4pEORZ/preview" alt=Ver Video 21" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada22.jpg" data-video-url="https://drive.google.com/file/d/1bjgJL6TtZr9GiqdZLtkZby7F5CZB5LZt/preview" alt=Ver Video 22" >
+                </li>
 
- @media tv { .movie-list { overflow-x: hidden; flex-wrap: wrap; justify-content: center; } } .movie-img, .season-img { width: 200px; height: 300px; object-fit: cover; border-radius: 8%; border: 13px solid transparent; } .caps { display: none; list-style: none; padding: 0; margin: 2px; background-color: #333; border-radius: 8px; columns: 2; width: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.2); } .caps a { display: block; padding: 0; color: white; text-decoration: none; width: 100%; } .caps a:hover { background-color: #555; } 
 
-.modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); } .modal-content { background-color: #fefefe; margin: 0; padding: 0; border: none; width: 100%; height: 100%; } .close { color: white; position: absolute; top: 10px; right: 10px; font-size: 24px; font-weight: bold; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px; cursor: pointer; opacity: 100%; } .movie-img:hover { transform: scale(1.03); cursor: pointer; } .season-img:hover { transform: scale(1.03); cursor: pointer; } .close:hover { opacity: 1; background-color: grey; } .close:hover, .close:focus { color: white; text-decoration: none; } iframe { width: 100%; height: 100%; border: none; }
- 
+
+<li>
+<img class="movie-img" src="Portadas/portada29.jpg" data-video-url="https://drive.google.com/file/d/1DT--BK14YtML-_-p9H2_7Z0oQOhPXU59/preview" alt=Ver Video 29" >
+                </li>
+
+        <li>
+<img class="movie-img" src="Portadas/portada30.jpg" data-video-url="https://drive.google.com/file/d/1UhZNx1XOMfQ6wybD5Lym7Nq4vAOZC7Tc/preview" alt=Ver Video 30" >
+                </li>
+
+
+        
+<li>
+<img class="movie-img" src="Portadas/portada36.jpg" data-video-url="https://drive.google.com/file/d/1JKs8J6fx5czK0bqh2vQDyebTk27vIvdV/preview" alt=Ver Video 36" >
+                </li>
+
+
+
+
+<li>
+<img class="movie-img" src="Portadas/portada39.jpg" data-video-url="https://drive.google.com/file/d/1crVi4T3wWjinhGPfX87zVad1NOnFI1ix/preview" alt=Ver Video 39" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada40.jpg" data-video-url="https://drive.google.com/file/d/1IUi7iiI3_b9fkjxFUmXM8XlRix2WzQ1u/preview" alt=Ver Video 40" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada41.jpg" data-video-url="https://drive.google.com/file/d/1elxAMqx3yDvq2uTwlentmdf8ktBUIqRn/preview" alt=Ver Video 41" >
+                </li>
+
+
+<li>
+<img class="movie-img" src="Portadas/portada43.jpg" data-video-url="https://drive.google.com/file/d/1h64Jy44rYz9xvsC9vGXEk_He5_DynMXB/preview" alt=Ver Video 43" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada43.1.jpg" data-video-url="https://drive.google.com/file/d/1FmmOw-oGeuqabp1HwhZ5lOWRFjbY9Yq_/preview" alt=Ver Video 43.1" >
+                </li>
+
+
+	<li>
+<img class="movie-img" src="Portadas/portada45.jpg" data-video-url="https://drive.google.com/file/d/11GeysEnxY5E2EK7UOf-2mK0R1E6Rhst9/preview" alt=Ver Video 45" >
+                </li>
+
+
+
+            <li>
+<img class="movie-img" src="Portadas/portada53.jpg" data-video-url="https://drive.google.com/file/d/10TZk5_laDqyKzKvPOY5y-YETCuvQ4HIl/preview" alt=Ver Video 53" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada54.jpg" data-video-url="https://drive.google.com/file/d/1o-pTVQlFUPice65aM2kdPxN-jJUwkoWW/preview" alt=Ver Video 54" >
+                </li>
+<li>
+<img class="movie-img" src="Portadas/portada55.jpg" data-video-url="https://drive.google.com/file/d/1d6dndsNiowSVjBqxGxQ-IK_OhHMkA-QD/preview" alt=Ver Video 55" >
+                </li>
+
+     
+    </ul>
+</div>
+
+       <!-- Sección Marvel -->
+       
+
+<div class="marvel">  
+       
+ <img src="Portadas/Marvel_title.png" alt="Marvel Title" class="marvel-image"> <!-- Imagen del título Marvel -->
+        
+     
+ <ul class="marvel-movie-list">
+       
+            <li>
+<img class="movie-img" src="Portadas/marvel1.jpg" data-video-url="https://drive.google.com/file/d/1kiUpsd7ptCQXPTmoo6EwIxeqqoFL2wN0/preview" alt="Portada Marvel 1" 
+            
+            </li>
+            <li>
+<img class="movie-img" src="Portadas/marvel2.jpg" data-video-url="https://drive.google.com/file/d/1QZsZeq_0QDmKjsBHetlurjvcV7wB8-kz/preview" alt="Portada Marvel 2" class="movie-img">
+               
+            </li>
+            <li>
+               <img class="movie-img" src="Portadas/marvel3.jpg" data-video-url="" alt="Portada Marvel 3" class="movie-img">
+
+            </li>
+<li>
+                <img class="movie-img" src="Portadas/marvel4.jpg" data-video-url="" alt="Portada Marvel 4" class="movie-img">
+            </li>
+			<li>
+                <img class="movie-img" src="Portadas/marvel5.jpg" data-video-url="" alt="Portada Marvel 5" class="movie-img">
+            </li>
+            <li>
+               <img class="movie-img" src="Portadas/marvel6.jpg" data-video-url="" alt="Portada Marvel 6" class="movie-img">
+
+            </li>
+            <li>
+               <img class="movie-img" src="Portadas/marvel7.jpg" data-video-url="" alt="Portada Marvel 7" class="movie-img">
+
+            </li>
+            <li>
+               <img class="movie-img" src="Portadas/marvel8.jpg" data-video-url="" alt="Portada Marvel 8" class="movie-img">
+
+            </li>
+      </ul>
+</div>
+
+
+<div class="dreamworks">  
+       
+ <img src="Portadas/dreamworks_title.png" alt="Dreamworks Title" class="dreamworks-image"> <!-- Imagen del título Marvel -->
+        
+     
+ <ul class="dreamworks-movie-list">
+
+<li>
+<img class="movie-img" src="Portadas/dw1.jpg" data-video-url="https://drive.google.com/file/d/1cVzZ8JVLAlfN94U-rC8MzzS17ezCF7cG/preview" alt="Portada dw 1" class="movie-img">
+
+            </li>
+ <img class="movie-img" src="Portadas/dw2.jpg" data-video-url="https://drive.google.com/file/d/14_zkCbfZuDCJD4rOfE6QfCs0tmhZeA3p/preview" alt="Portada dw 2" class="movie-img">
+
+            </li>
+ <img class="movie-img" src="Portadas/dw3.jpg" data-video-url="https://drive.google.com/file/d/1C0sWxYcPIUI8M3D5aOKT68bJXxqQ6I7W/preview" alt="Portada dw 3" class="movie-img">
+
+            </li>
+ <img class="movie-img" src="Portadas/dw4.jpg" data-video-url="https://drive.google.com/file/d/1jk2nGUVwZLPXXMJorNHOgj9odyPq5JoB/preview" alt="Portada dw 4" class="movie-img">
+
+            </li>
+ <img class="movie-img" src="Portadas/dw5.jpg" data-video-url="https://drive.google.com/file/d/1d5ituRMpdw-4JhBlrtqUOGBO-Y1Ldfap/preview" alt="Portada dw 5" class="movie-img">
+
+            </li>
+
+
+<li>
+</li>
+
+</ul>
+</div>
+
+
+
+
+
+<div class="ganatomy">
+        <img src="Portadas/Ganatomy.png" alt="Grey's anatomy title" class="ganatomy-image"> <!-- Imagen del título Series -->
+       
+      
+
+
+
+
+            <ul class="gaseason-list">
+
+<li>
+ <img src="Portadas/gaseason1.jpg" alt="GA season 1" class="season-img" onclick="openGAT1()" style="cursor: pointer;">
+<script>function openGAT1() {window.location.href = 'GAT1.html';}</script>
+
+</li>	
+
+
+       	<li>                  
+  <img src="Portadas/gaseason2.jpg" alt="GA season 2" class="season-img" onclick="openGAT2()" style="cursor: pointer;">
+
+<script>function openGAT2() {window.location.href = 'GAT2.html';}</script>
+</li>
+
+
+
+
+                <li>    
+<img src="Portadas/gaseason3.jpg" alt="GA season 3" class="season-img">
+</li>
+
+<li>    
+				<img src="Portadas/gaseason4.jpg" alt="GA season 4" class="season-img">
+</li>
+
+<li>    
+				<img src="Portadas/gaseason5.jpg" alt="GA season 5" class="season-img">
+</li>
+
+<li>    
+				<img src="Portadas/gaseason6.jpg" alt="GA season 6" class="season-img">
+</li>
+
+<li>    
+				<img src="Portadas/gaseason7.jpg" alt="GA season 7" class="season-img">
+</li>
+
+<li>    
+				<img src="Portadas/gaseason8.jpg" alt="GA season 8" class="season-img">
+</li>
+
+<li>    
+				<img src="Portadas/gaseason9.jpg" alt="GA season 9" class="season-img">
+</li>
+      </ul>
+</div>
+
+
+
+<div class="namsterdam">
+
+ <img src="Portadas/na_title.png" alt="New amsterdam title" class="na-image"> <!-- Imagen del título Series -->
+       
+
+
+
+            <ul class="naseason-list">
+			
+<li>
+ <img src="Portadas/naseason1.png" alt="NA season 1" class="season-img" onclick="openNAT1()" style="cursor: pointer;">
+<script>function openNAT1() {window.location.href = 'NAT1.html';}</script>
+
+</li>
+
+         
+<li>    
+				
+<img src="Portadas/naseason2.jpg" alt="NA season 2" class="season-img">
+</li>
+
+<li>    
+				
+<img src="Portadas/naseason3.jpg" alt="NA season 3" class="season-img">
+</li>
+
+<li>    
+				
+<img src="Portadas/naseason4.jpg" alt="NA season 4" class="season-img">
+</li>
+
+<li>    
+				
+<img src="Portadas/naseason5.jpg" alt="NA season 5" class="season-img">
+</li>
+
+      </ul>
+</div>
+
+
+<div class="got">
+
+ <img src="Portadas/got_title.png" alt="GOT title" class="got-image"> <!-- Imagen del título Series -->
+       
+
+
+            <ul class="gotseason-list">
+			
+            <li>    
+				<img src="Portadas/gotseason1.jpg" alt="GOT season 1" class="season-img">
+
+	   </li>
+
+<li>    
+				
+<img src="Portadas/gotseason2.jpg" alt="GOT season 2" class="season-img">
+</li>
+
+<li>    
+				
+<img src="Portadas/gotseason3.jpg" alt="GOT season 3" class="season-img">
+</li>
+
+<li>    
+				
+<img src="Portadas/gotseason4.jpg" alt="GOT season 4" class="season-img">
+</li>
+
+<li>    
+				
+<img src="Portadas/gotseason5.jpg" alt="GOT season 5" class="season-img">
+</li>
+
+<li>    
+				
+<img src="Portadas/gotseason6.jpg" alt="GOT season 6" class="season-img">
+<div class="caps">
+<a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1gmTwzHcgQB2HltsHQrWGA8Ao0-9geTl0/preview">Capítulo 1</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1vRxSxf58pqiOIcIl6du7eQh7i0Azzgev/preview">Capítulo 2</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1vz4SJ73qwKi1Jct9stSDsCG11RbkduTx/preview">Capítulo 3</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1pwT50t1d_wz-ULh-hizxXNfLDanBlkut/preview">Capítulo 4</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/15VuhkYd4zoLhSjWihVVc3j1O_IpxoZxm/preview">Capítulo 5</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1e4p_7sycqG5tb73GsVtxW9gPKWhiXsWb/preview">Capítulo 6</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1T18qxCL_Cig346CO8YDOO32z0DcWQ4MH/preview">Capítulo 7</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1wUZuIZKh8trMYnx1PCO_wH_QkfMgRLT6/preview">Capítulo 8</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1w6-5j6vLtUtmMqbnYUy4suOFO3Ip9Ko1/preview">Capítulo 9</a>
+
+ <a href="javascript:void(0);" data-video-url="https://drive.google.com/file/d/1oMBi5Ciw3zPYqnsNQ3JxqfW2pmhIF0fJ/preview">Capítulo 10</a>
+
+         </div>
+
+</li>
+
+<li>    
+				
+<img src="Portadas/gotseason7.jpg" alt="GOT season 7" class="season-img">
+</li>
+
+<li>    
+				
+<img src="Portadas/gotseason8.jpg" alt="GOT season 8" class="season-img">
+</li>
+
+
+      </ul>
+</div>
+
+
+
+<div class="tboys">
+        <img src="Portadas/tboys_title.png" alt="The Boys title" class="tboys-image">        
+
+            <ul class="tbseason-list">
+
+<li>
+ <img src="Portadas/tbseason1.jpg" alt="TB season 1" class="season-img" onclick="openTBT1()" style="cursor: pointer;">
+<script>function openTBT1() {window.location.href = 'TBT1.html';}</script>
+
+</li>	
+
+
+       	<li>                  
+  <img src="Portadas/tbseason2.jpg" alt="TB season 2" class="season-img" onclick="openTBT2()" style="cursor: pointer;">
+
+<script>function openTBT2() {window.location.href = 'TBT2.html';}</script>
+</li>
+
+<li>                  
+  <img src="Portadas/tbseason3.jpg" alt="TB season 3" class="season-img" onclick="openTBT3()" style="cursor: pointer;">
+
+<script>function openTBT3() {window.location.href = 'TBT3.html';}</script>
+</li>
+
+<li>                  
+  <img src="Portadas/tbseason4.jpg" alt="TB season 4" class="season-img" onclick="openTBT4()" style="cursor: pointer;">
+
+<script>function openTBT4() {window.location.href = 'TBT4.html';}</script>
+</li>
+
+</ul>
+</div>
+
+
+<iframe name="movie-iframe" src="" frameborder="0"></iframe>
+
+
+
+			
+<!-- Script JavaScript para alternar la visibilidad de los capítulos -->
+
+    <script>
+        document.querySelectorAll('.season-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtén el enlace y el contenedor del iframe
+    var movieLink = document.getElementById('portada6');
+    var iframeContainer = document.getElementById('iframe-container');
+    var iframe = document.getElementById('movie-iframe');
+    
+    // Añade un evento de clic al enlace
+    movieLink.addEventListener('click', function(event) {
+      // Previene el comportamiento por defecto del enlace
+      event.preventDefault();
+      
+      // Muestra el contenedor del iframe
+      iframeContainer.style.display = 'block';
+      
+      // Establece la URL del iframe
+      iframe.src = 'https://drive.google.com/file/d/1zUzqCKq7jVIB9UqcN0Z0hcQAmEhnmv1x/preview';
+    });
+  });
+</script>
+
+<script>
+        // Obtener el modal y el iframe
+        var modal = document.getElementById("myModal");
+        var iframe = document.getElementById("videoFrame");
+
+      
+
+        // Función para abrir el modal con el video específico
+        function openModal(videoUrl) {
+            iframe.src = videoUrl; // Establece la URL del video
+            modal.style.display = "block";
+            // Solicitar pantalla completa del iframe
+            requestFullscreen(iframe);
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            modal.style.display = "none";
+            iframe.src = ""; // Limpiar el src para detener el video
+        }
+
+        // Manejar clic en las imágenes de video
+        var images = document.getElementsByClassName("movie-img");
+        for (var i = 0; i < images.length; i++) {
+            images[i].addEventListener("click", function() {
+                var videoUrl = this.getAttribute("data-video-url");
+                openModal(videoUrl);
+            });
+        }
+
+        // Manejar clic en el botón de cierre
+        var closeButton = document.getElementsByClassName("close")[0];
+        closeButton.onclick = closeModal;
+
+        // Manejar clic fuera del contenido del modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+<script>
+var links = document.querySelectorAll(".caps a");
+        links.forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+                var videoUrl = this.getAttribute("data-video-url");
+                openModal(videoUrl);
+            });
+        });
+</script>
+
+<script type="text/javascript">
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+            
+        });
+    </script>
+
+
+<script>
+
+function bloquearClicDerechoIframe() {
+            var iframe = document.getElementById('VideoFrame');
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+            iframeDoc.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+            });
+        }
+
+        // Bloqueo temporal durante la carga del iframe
+        function bloqueoTemporalIframe() {
+            var iframe = document.getElementById('VideoFrame');
+            iframe.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+            });
+        }
+
+        // Aplicar bloqueo temporal inmediatamente y luego refuerzo después de la carga
+        window.onload = function() {
+            bloqueoTemporalIframe();
+            document.getElementById('VideoFrame').onload = bloquearClicDerechoIframe;
+        };
+    </script>
+
+</body>
+</html>
