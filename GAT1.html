@@ -191,6 +191,45 @@ h1 {
             <iframe id="VideoFrame" src="https://drive.google.com/file/d/1IDCLushtHv8pL__DD5lluLWOrkRwGHZr/preview" allowfullscreen></iframe>
         </div>
     </div>
+<script>
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        console.log('Cookie set:', name, value); // Depuración
+    }
 
+    function getCookie(name) {
+        const cname = name + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(cname) === 0) {
+                console.log('Cookie retrieved:', name, c.substring(cname.length, c.length)); // Depuración
+                return c.substring(cname.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function guardarEstado(checkbox) {
+        setCookie(checkbox.id, checkbox.checked, 365);
+    }
+
+    function cargarEstado() {
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            const estado = getCookie(checkbox.id);
+            checkbox.checked = estado === 'true';
+        });
+    }
+
+    window.onload = cargarEstado;
+</script>
+    
 </body>
 </html>
