@@ -100,35 +100,60 @@
     </div>
     <iframe id="content"></iframe>
     <script>
+        const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000; // 7 días en milisegundos
+
+        function getServerLoginTime() {
+            // Esta función simula la obtención del tiempo de inicio de sesión desde un servidor.
+            // En un entorno real, esto sería una llamada a una API que devuelve la hora de inicio de sesión del usuario.
+            return localStorage.getItem('serverLoginTime');
+        }
+
+        function setServerLoginTime(time) {
+            // Esta función simula el establecimiento del tiempo de inicio de sesión en un servidor.
+            // En un entorno real, esto sería una llamada a una API que guarda la hora de inicio de sesión del usuario.
+            localStorage.setItem('serverLoginTime', time);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-            if(localStorage.getItem('loggedIn') === 'true') {
-                document.getElementById('loginContainer').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-                document.getElementById('content').src = 'web.html';
+            const serverLoginTime = getServerLoginTime();
+            if (serverLoginTime) {
+                const elapsedTime = Date.now() - parseInt(serverLoginTime, 10);
+                if (elapsedTime < SEVEN_DAYS) {
+                    document.getElementById('loginContainer').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+                    document.getElementById('content').src = 'web.html';
+                } else {
+                    // Si la sesión ha expirado, se eliminan los datos
+                    localStorage.removeItem('serverLoginTime');
+                }
             }
         });
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            var a1b2c3 = document.getElementById('a1b2c3').value;
-            var d4e5f6 = document.getElementById('d4e5f6').value;
-            var errorMessage = document.getElementById('error-message');
-            var loginContainer = document.getElementById('loginContainer');
-            var contentFrame = document.getElementById('content');
+            const a1b2c3 = document.getElementById('a1b2c3').value;
+            const d4e5f6 = document.getElementById('d4e5f6').value;
+            const errorMessage = document.getElementById('error-message');
+            const loginContainer = document.getElementById('loginContainer');
+            const contentFrame = document.getElementById('content');
 
-            var credentials = [
-                {user: atob('YW50b3RhcA=='), pass: atob('cGVvY2FjYTEyMw==')},
-                {user: atob('cGVsaXNmcmVl'), pass: atob('bGFwY293bXg=')}
+            const credentials = [
+                { user: atob('YW50b3RhcA=='), pass: atob('cGVvY2FjYTEyMw==') },
+                { user: atob('cGVsaXNmcmVl'), pass: atob('bGFwY293bXg=') }
             ];
 
-            var isValid = credentials.some(function(credential) {
+            const isValid = credentials.some(function (credential) {
                 return a1b2c3 === credential.user && d4e5f6 === credential.pass;
             });
 
-            if(isValid) {
-                localStorage.setItem('loggedInUser', username);
-                localStorage.setItem('loggedIn', 'true');
-                localStorage.setItem('loginTime', Date.now());
+            if (isValid) {
+                let serverLoginTime = getServerLoginTime();
+                if (!serverLoginTime) {
+                    // Si no existe un tiempo de inicio de sesión, se establece uno nuevo
+                    serverLoginTime = Date.now().toString();
+                    setServerLoginTime(serverLoginTime);
+                }
+
                 loginContainer.style.display = 'none';
                 contentFrame.style.display = 'block';
                 contentFrame.src = 'web.html';
@@ -137,18 +162,8 @@
             }
         });
 
-        setInterval(function() {
-            var loginTime = localStorage.getItem('loginTime');
-            if(loginTime && Date.now() - loginTime > 7 * 24 * 60 * 60 * 1000) {
-                localStorage.removeItem('loggedIn');
-                localStorage.removeItem('loginTime');
-                location.reload();
-            }
-        }, 1000);
-    </script>
-    <script type="text/javascript">
         document.addEventListener('contextmenu', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Previene el menú contextual en clic derecho
         });
     </script>
 </body>
