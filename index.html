@@ -126,6 +126,7 @@
             });
 
             if(isValid) {
+                localStorage.setItem('loggedInUser', username);
                 localStorage.setItem('loggedIn', 'true');
                 localStorage.setItem('loginTime', Date.now());
                 loginContainer.style.display = 'none';
