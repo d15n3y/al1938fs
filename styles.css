@@ -74,6 +74,24 @@ z-index: -1;
 z-index: -1; 
 }
 
+.tboys { position: relative; z-index: 0; } 
+
+.tboys::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Portadas/tbb.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    opacity: 1;     
+z-index: -1; 
+}
+
+
 .dreamworks { position: relative; z-index: 0; } 
 
 .dreamworks::before {
@@ -96,6 +114,8 @@ z-index: -1;
 
 .got-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
 
+.tboys-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
+
 .dreamworks-image { width: 34%; height: auto; margin-bottom: 0%; margin-top: 1%; text-align: center; } 
 
 h2 { margin-top: -8%; font-family: 'Waltograph', sans-serif; font-size: 2em; font-weight: bold; color: #FFFFFF; text-align: right; margin-right: 5%; } .movie-list { list-style: none; position: relative; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 8%; margin-bottom: 0%; width: 100%; overflow: auto; } .movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } .marvel-movie-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } 
@@ -103,7 +123,10 @@ h2 { margin-top: -8%; font-family: 'Waltograph', sans-serif; font-size: 2em; fon
 
 .marvel-movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .marvel-movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } .gaseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .gaseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .gaseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } .naseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .naseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .naseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } 
 
-.gotseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; width: 100%; overflow: auto; } .gotseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .gotseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+.gotseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .gotseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .gotseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+
+.tbseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; width: 100%; overflow: auto; } .tbseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .tbseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+
 
 .dreamworks-movie-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .dreamworks-movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .dreamworks-movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
 
