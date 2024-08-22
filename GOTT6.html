@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap">
+
+    <title>Game of Thrones - Temporada 6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: top;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Portadas/gotb.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    opacity: 1; /* Controla la opacidad del fondo */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 80%;
+            height: 400px;
+            margin: auto;
+            padding: 20px;
+
+        }
+        .episodes {
+            width: 35%;
+            overflow-y: auto;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco con transparencia */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         
+        }
+        .video-container {
+            width: 60%;
+            position: relative;
+        }
+h1 {
+    text-align: center;
+    color: transparent; /* Hace que el texto sea transparente */
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 0;
+    -webkit-text-stroke: 1px white; /* Aplica un borde fino negro al texto */
+}
+
+
+
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+        }
+        li {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+        li input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            flex: 1;
+        }
+        li a:hover {
+            color: #007BFF;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+               .close-button {
+            color: white; position: absolute; top: 9.5px; right: 11px; font-size: 24px; font-weight: bold; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px; cursor: pointer; opacity: 60%; 
+        }
+        .close-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para la barra de desplazamiento (scrollbar) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.6); /* Color oscuro con transparencia */
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent; /* Hacer la pista del scrollbar transparente */
+        }
+    </style>
+    <script>
+        function cargarEpisodio(url) {
+            document.getElementById('VideoFrame').src = url;
+        }
+
+        function toggleFullScreen() {
+            const iframe = document.getElementById('VideoFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        function cerrarVideo() {
+            document.getElementById('VideoFrame').src = '';
+        }
+
+        // Bloquear el clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</head>
+<body>
+
+
+    
+    <h1>Game of Thrones - Temporada 6</h1>
+
+    <div class="container">
+        <div class="episodes">
+            <ul>
+ <li><input type="checkbox" id="GOTep1-6"><label for="GOTep1-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/15VuhkYd4zoLhSjWihVVc3j1O_IpxoZxm/preview')">Capítulo 1: "The Red Woman"</a></label></li>
+<li><input type="checkbox" id="GOTep2-6"><label for="GOTep2-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1T18qxCL_Cig346CO8YDOO32z0DcWQ4MH/preview')">Capítulo 2: "Home"</a></label></li>
+<li><input type="checkbox" id="GOTep3-6"><label for="GOTep3-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1e4p_7sycqG5tb73GsVtxW9gPKWhiXsWb/preview')">Capítulo 3: "Oathbreaker"</a></label></li>
+<li><input type="checkbox" id="GOTep4-6"><label for="GOTep4-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1gmTwzHcgQB2HltsHQrWGA8Ao0-9geTl0/preview')">Capítulo 4: "Book of the Stranger"</a></label></li>
+<li><input type="checkbox" id="GOTep5-6"><label for="GOTep5-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1oMBi5Ciw3zPYqnsNQ3JxqfW2pmhIF0fJ/preview')">Capítulo 5: "The Door"</a></label></li>
+<li><input type="checkbox" id="GOTep6-6"><label for="GOTep6-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1pwT50t1d_wz-ULh-hizxXNfLDanBlkut/preview')">Capítulo 6: "Blood of My Blood"</a></label></li>
+<li><input type="checkbox" id="GOTep7-6"><label for="GOTep7-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1vRxSxf58pqiOIcIl6du7eQh7i0Azzgev/preview')">Capítulo 7: "The Broken Man"</a></label></li>
+<li><input type="checkbox" id="GOTep8-6"><label for="GOTep8-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1vz4SJ73qwKi1Jct9stSDsCG11RbkduTx/preview')">Capítulo 8: "No One"</a></label></li>
+<li><input type="checkbox" id="GOTep9-6"><label for="GOTep9-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1w6-5j6vLtUtmMqbnYUy4suOFO3Ip9Ko1/preview')">Capítulo 9: "Battle of the Bastards"</a></label></li>
+<li><input type="checkbox" id="GOTep10-6"><label for="GOTep10-6"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1wUZuIZKh8trMYnx1PCO_wH_QkfMgRLT6/preview')">Capítulo 10: "The Winds of Winter"</a></label></li>
+               
+
+            </ul>
+        </div>
+        <div class="video-container">
+            <button class="close-button" onclick="cerrarVideo()">×</button>
+            <iframe id="VideoFrame" src="https://drive.google.com/file/d/1IDCLushtHv8pL__DD5lluLWOrkRwGHZr/preview" allowfullscreen></iframe>
+        </div>
+    </div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        return;
+    }
+
+    // Cargar el estado de cada checkbox
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        const savedState = localStorage.getItem(`${currentUser}_${checkbox.id}`);
+        if (savedState !== null) {
+            checkbox.checked = savedState === 'true';
+        }
+
+        // Guardar el estado del checkbox cuando cambia
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(`${currentUser}_${checkbox.id}`, checkbox.checked);
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>
