@@ -73,6 +73,25 @@
         .login-container button:hover {
             background-color: #0056b3;
         }
+        .logout-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .logout-container button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #dc3545;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+        .logout-container button:hover {
+            background-color: #c82333;
+        }
         .error-message {
             color: red;
             font-size: 14px;
@@ -87,6 +106,9 @@
     </style>
 </head>
 <body>
+    <div class="logout-container" id="logoutContainer" style="display: none;">
+        <button id="logoutButton">Cerrar sesión</button>
+    </div>
     <div class="login-container" id="loginContainer">
         <h2>INICIAR SESIÓN</h2>
         <form id="loginForm">
@@ -103,27 +125,34 @@
         const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000; // 7 días en milisegundos
 
         function getServerLoginTime() {
-            // Esta función simula la obtención del tiempo de inicio de sesión desde un servidor.
-            // En un entorno real, esto sería una llamada a una API que devuelve la hora de inicio de sesión del usuario.
             return localStorage.getItem('serverLoginTime');
         }
 
         function setServerLoginTime(time) {
-            // Esta función simula el establecimiento del tiempo de inicio de sesión en un servidor.
-            // En un entorno real, esto sería una llamada a una API que guarda la hora de inicio de sesión del usuario.
             localStorage.setItem('serverLoginTime', time);
+        }
+
+        function logout() {
+            // Solo eliminar el usuario actual y el tiempo de login, sin afectar otros datos
+            localStorage.removeItem('currentUser');
+            localStorage.removeItem('serverLoginTime');
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('content').style.display = 'none';
+            document.getElementById('logoutContainer').style.display = 'none';
         }
 
         document.addEventListener('DOMContentLoaded', function() {
             const serverLoginTime = getServerLoginTime();
-            if (serverLoginTime) {
+            const currentUser = localStorage.getItem('currentUser');
+
+            if (serverLoginTime && currentUser) {
                 const elapsedTime = Date.now() - parseInt(serverLoginTime, 10);
                 if (elapsedTime < SEVEN_DAYS) {
                     document.getElementById('loginContainer').style.display = 'none';
                     document.getElementById('content').style.display = 'block';
+                    document.getElementById('logoutContainer').style.display = 'block';
                     document.getElementById('content').src = 'web.html';
                 } else {
-                    // Si la sesión ha expirado, se eliminan los datos
                     localStorage.removeItem('serverLoginTime');
                 }
             }
@@ -139,7 +168,8 @@
 
             const credentials = [
                 { user: atob('YW50b3RhcA=='), pass: atob('cGVvY2FjYTEyMw==') },
-                { user: atob('cGVsaXNmcmVl'), pass: atob('bGFwY293bXg=') }
+                { user: atob('cGVsaXNmcmVl'), pass: atob('bGFwY293bXg=') },
+                { user: atob('YWRtaW5jb2Nv'), pass: atob('cG90YXNpbw==') } // admincoco:potasio
             ];
 
             const isValid = credentials.some(function (credential) {
@@ -149,21 +179,25 @@
             if (isValid) {
                 let serverLoginTime = getServerLoginTime();
                 if (!serverLoginTime) {
-                    // Si no existe un tiempo de inicio de sesión, se establece uno nuevo
                     serverLoginTime = Date.now().toString();
                     setServerLoginTime(serverLoginTime);
                 }
 
+                localStorage.setItem('currentUser', a1b2c3);
+
                 loginContainer.style.display = 'none';
                 contentFrame.style.display = 'block';
                 contentFrame.src = 'web.html';
+                document.getElementById('logoutContainer').style.display = 'block';
             } else {
                 errorMessage.textContent = 'USUARIO o CONTRASEÑA incorrectos.';
             }
         });
 
+        document.getElementById('logoutButton').addEventListener('click', logout);
+
         document.addEventListener('contextmenu', function(event) {
-            event.preventDefault(); // Previene el menú contextual en clic derecho
+            event.preventDefault();
         });
     </script>
 </body>
