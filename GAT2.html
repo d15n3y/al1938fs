@@ -96,7 +96,7 @@ body::before {
         }
         .arrow-button {
             position: absolute;
-            top: 10px;
+            top: 40px;
             right: 5%;
             padding: 10px 15px;
             background-color: gray;
@@ -226,30 +226,27 @@ body::before {
 
 <script>
 
-// Función para guardar el estado de todos los checkboxes
-function saveCheckboxStates() {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach(checkbox => {
-    localStorage.setItem(checkbox.id, checkbox.checked);
-  });
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        return;
+    }
 
-// Función para cargar el estado de todos los checkboxes
-function loadCheckboxStates() {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach(checkbox => {
-    const savedState = localStorage.getItem(checkbox.id) === 'true';
-    checkbox.checked = savedState;
-  });
-}
+    // Cargar el estado de cada checkbox
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        const savedState = localStorage.getItem(`${currentUser}_${checkbox.id}`);
+        if (savedState !== null) {
+            checkbox.checked = savedState === 'true';
+        }
 
-// Configurar los eventos
-document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-  checkbox.addEventListener('change', saveCheckboxStates);
+        // Guardar el estado del checkbox cuando cambia
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(`${currentUser}_${checkbox.id}`, checkbox.checked);
+        });
+    });
 });
 
-// Cargar el estado cuando se carga la página
-window.addEventListener('load', loadCheckboxStates);
 </script>
     
 </body>
