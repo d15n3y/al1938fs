@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap">
+
+    <title>Prison Break - Temporada 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: top;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Portadas/pbbackground.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    opacity: 1; /* Controla la opacidad del fondo */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 80%;
+            height: 420px;
+            margin: auto;
+            padding: 20px;
+        }
+         .episodes {
+            width: 35%;
+            overflow-y: auto;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco con transparencia */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         
+        }
+        .video-container {
+            width: 60%;
+            position: relative;
+        }
+h1 {
+    text-align: center;
+    color: transparent; /* Hace que el texto sea transparente */
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 0;
+    -webkit-text-stroke: 1px black; /* Aplica un borde fino negro al texto */
+}
+
+
+
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+        }
+        li {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+        li input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            flex: 1;
+        }
+        li a:hover {
+            color: #007BFF;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+       
+        .close-button {
+            color: white; position: absolute; top: 9.5px; right: 11px; font-size: 24px; font-weight: bold; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px; cursor: pointer; opacity: 60%; 
+        }
+        .close-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para la barra de desplazamiento (scrollbar) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.6); /* Color oscuro con transparencia */
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent; /* Hacer la pista del scrollbar transparente */
+        }
+    </style>
+    <script>
+        function cargarEpisodio(url) {
+            document.getElementById('VideoFrame').src = url;
+        }
+
+        function toggleFullScreen() {
+            const iframe = document.getElementById('VideoFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        function cerrarVideo() {
+            document.getElementById('VideoFrame').src = '';
+        }
+
+        // Bloquear el clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</head>
+<body>
+
+
+    
+    <h1>Prison break - Temporada 1</h1>
+
+    <div class="container">
+        <div class="episodes">
+            <ul>
+<li><input type="checkbox" id="PBep1-4"><label for="PBep1-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1CzcdyQjI2LyRoyh_FE_RALGARrVrabWl/preview')">Capítulos 1 y 2: "Scylla" y "Breaking and Entering"</a></label></li>
+<li><input type="checkbox" id="PBep3-4"><label for="PBep3-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1WDfWt0nNKPegftxCL76Fo31P8WdPn6Co/preview')">Capítulo 3: "Shut Down"</a></label></li>
+<li><input type="checkbox" id="PBep4-4"><label for="PBep4-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1rU3U_yz3siTqCd3vv58VDsMslCjsYaBg/preview')">Capítulo 4: "Eagles and Angels"</a></label></li>
+<li><input type="checkbox" id="PBep5-4"><label for="PBep5-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1CVGF5jz7Nr7GcQ3h-J4v_JnTJIZ75Om6/preview')">Capítulo 5: "Safe and Sound"</a></label></li>
+<li><input type="checkbox" id="PBep6-4"><label for="PBep6-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1HckoHaqRqdJcO8f9YJ245hl6PECEsqtF/preview')">Capítulo 6: "Blow Out"</a></label></li>
+<li><input type="checkbox" id="PBep7-4"><label for="PBep7-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1CYDOj1H__luMCoPdP-4BQ_V1v1LBfO4A/preview')">Capítulo 7: "Five the Hard Way"</a></label></li>
+<li><input type="checkbox" id="PBep8-4"><label for="PBep8-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1Wntp81myXjsR197iifpobg-NMDZ4V-_b/preview')">Capítulo 8: "The Price"</a></label></li>
+<li><input type="checkbox" id="PBep9-4"><label for="PBep9-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1aV5GaxvUUwl5FMRU9ydkxdQVqC2AQQz3/preview')">Capítulo 9: "Greatness Achieved"</a></label></li>
+<li><input type="checkbox" id="PBep10-4"><label for="PBep10-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1VXkXif1J-FCH-opcDX6Fa5z6TaXdEFEZ/preview')">Capítulo 10: "The Legend"</a></label></li>
+<li><input type="checkbox" id="PBep11-4"><label for="PBep11-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1-cNNmaDif9FUU434ZW85oZKZqVHH2B0X/preview')">Capítulo 11: "Quiet Riot"</a></label></li>
+<li><input type="checkbox" id="PBep12-4"><label for="PBep12-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1lKuuAhhctLIPywFJh0qr1jNEeNOHb7iL/preview')">Capítulo 12: "Selfless"</a></label></li>
+<li><input type="checkbox" id="PBep13-4"><label for="PBep13-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1JkiIb7y7bjGcJUmVO2GWV9R2FzYVMr_Y/preview')">Capítulo 13: "Deal or No Deal"</a></label></li>
+<li><input type="checkbox" id="PBep14-4"><label for="PBep14-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1Cj0S97V8adtQBPNewgmMPd73fC6npXb_/preview')">Capítulo 14: "Just Business"</a></label></li>
+<li><input type="checkbox" id="PBep15-4"><label for="PBep15-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1Cm0Zq_QXGWW0RwKkL6EjDRG05ctf_uzq/preview')">Capítulo 15: "Going Under"</a></label></li>
+<li><input type="checkbox" id="PBep16-4"><label for="PBep16-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1CsMUWHhDocikNVVX5aBkGlO_B0014WFq/preview')">Capítulo 16: "The Sunshine State"</a></label></li>
+<li><input type="checkbox" id="PBep17-4"><label for="PBep17-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1CtO26c4edbYL0ObNjURGgjEOg_7vOSrV/preview')">Capítulo 17: "The Mother Lode"</a></label></li>
+<li><input type="checkbox" id="PBep18-4"><label for="PBep18-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1Cwed4et06pPAJ2mUP6HKgaHS4y0nmeIs/preview')">Capítulo 18: "VS."</a></label></li>
+<li><input type="checkbox" id="PBep19-4"><label for="PBep19-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1D0FMmIQgWt6fkV_IjHucziz_-AnoM4N-/preview')">Capítulo 19: "S.O.B."</a></label></li>
+<li><input type="checkbox" id="PBep20-4"><label for="PBep20-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1D33PTk1lhjHpEQZLMCZzJ78MpsXwFn51/preview')">Capítulo 20: "Cowboys and Indians"</a></label></li>
+<li><input type="checkbox" id="PBep21-4"><label for="PBep21-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1D3IAEY6Zz7xmrWY7kg-7z73DPrqf1FTo/preview')">Capítulo 21: "Rate of Exchange"</a></label></li>
+<li><input type="checkbox" id="PBep22-4"><label for="PBep22-4"><a onclick="cargarEpisodio('https://drive.google.com/file/d/1D3KuD4HDz9naUeqjAXP68yjPrvK1Gx2P/preview')">Capítulos 23 y 24: "Killing Your Number" y "Free"</a></label></li>
+
+                
+            </ul>
+        </div>
+        <div class="video-container">
+            <button class="close-button" onclick="cerrarVideo()">×</button>
+            <iframe id="VideoFrame" src="https://drive.google.com/file/d/1NqLIkoV1OCk7TPmR-lvqOJosaptENYc2/preview" allowfullscreen></iframe>
+        </div>
+    </div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        return;
+    }
+
+    // Cargar el estado de cada checkbox
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        const savedState = localStorage.getItem(`${currentUser}_${checkbox.id}`);
+        if (savedState !== null) {
+            checkbox.checked = savedState === 'true';
+        }
+
+        // Guardar el estado del checkbox cuando cambia
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(`${currentUser}_${checkbox.id}`, checkbox.checked);
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>
