@@ -87,19 +87,11 @@ Height: 8%;
         }
     </style>
     <script>
-
-         seasonSelect.addEventListener("change", function () {
-    const selectedSeason = parseInt(this.value);
-    loadEpisodes(selectedSeason);
-    localStorage.setItem("lastSeason", selectedSeason); // Almacena la última temporada
-});
-       document.addEventListener("DOMContentLoaded", function () {
-    const lastSeason = localStorage.getItem("lastSeason");
-    const initialSeason = lastSeason ? parseInt(lastSeason) : 1; // Cargar última temporada o 1
-    loadEpisodes(initialSeason);
-});
-
-   
+        document.addEventListener("DOMContentLoaded", function() {
+            loadSeason(1);
+            loadEpisode('1', '1');
+            loadCheckboxStates(); // Cargar el estado de los checkboxes al inicio
+        });
 
         function changeLanguage(lang) {
             if (lang === 'es') {
@@ -110,13 +102,10 @@ Height: 8%;
         }
 
         function loadSeason(defaultSeason = null) {
-    // Obtener la última temporada vista del localStorage
-    const lastSeason = localStorage.getItem("lastSeason");
-    const season = defaultSeason || (lastSeason ? parseInt(lastSeason) : 1); // Usar la última temporada o 1
-    const episodeList = document.getElementById('episodeList');
-    episodeList.innerHTML = ''; // Limpiar la lista de episodios
+            const season = defaultSeason || document.getElementById('seasonSelect').value;
+            const episodeList = document.getElementById('episodeList');
+            episodeList.innerHTML = ''; // Limpiar la lista de episodios
 
-}
             const episodes = {
                 1: [
     { name: 'Capítulo 1: "Pilot"', link: 'https://drive.google.com/file/d/1NqLIkoV1OCk7TPmR-lvqOJosaptENYc2/preview' },
@@ -253,7 +242,21 @@ Height: 8%;
             document.getElementById('closeButton').style.display = 'none'; // Ocultar el botón "X"
         }
 
-   
+        function loadCheckboxStates() {
+            const season = document.getElementById('seasonSelect').value;
+            const checkboxes = document.querySelectorAll('.episode-list input[type="checkbox"]');
+            checkboxes.forEach((checkbox, index) => {
+                const episodeKey = `${season}-${index + 1}`;
+                checkbox.checked = localStorage.getItem(episodeKey) === 'true';
+            });
+        }
+
+        function saveCheckboxState(episode) {
+            const season = document.getElementById('seasonSelect').value;
+            const episodeKey = `${season}-${episode}`;
+            const checkbox = document.getElementById(`ep${episode}`);
+            localStorage.setItem(episodeKey, checkbox.checked);
+        }
     </script>
 </head>
 <body>
@@ -288,35 +291,5 @@ Height: 8%;
 </div>
 
     </div>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    const currentUser = localStorage.getItem('currentUser');
-    if (!currentUser) {
-        return;
-    }
-
-
-    // Cargar el estado de cada checkbox
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(function(checkbox) {
-        const savedState = localStorage.getItem(`${currentUser}_${checkbox.id}`);
-        if (savedState !== null) {
-            checkbox.checked = savedState === 'true';
-        }
-
-        // Guardar el estado del checkbox cuando cambia
-        checkbox.addEventListener('change', function() {
-            localStorage.setItem(`${currentUser}_${checkbox.id}`, checkbox.checked);
-        });
-    });
-});
-
-</script>
-
-
 </body>
-
-
 </html>
