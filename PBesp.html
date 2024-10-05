@@ -234,7 +234,7 @@ Height: 50px;
 
         function loadEpisode(season, episode, link) {
             const iframe = document.getElementById('VideoFrame');
-            iframe.src = 'https://drive.google.com/file/d/1NqLIkoV1OCk7TPmR-lvqOJosaptENYc2/preview'; // Cambiar aquí para usar el enlace del episodio
+            iframe.src = link; // Cambiar aquí para usar el enlace del episodio
             saveCheckboxState(episode); // Guardar el estado del checkbox al cargar el episodio
             document.getElementById('closeButton').style.display = 'block'; // Mostrar el botón "X"
         }
