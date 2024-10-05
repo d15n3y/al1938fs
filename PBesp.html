@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -257,14 +257,6 @@ Height: 8%;
             const checkbox = document.getElementById(`ep${episode}`);
             localStorage.setItem(episodeKey, checkbox.checked);
         }
-function loadSeason(defaultSeason = null) {
-    const season = defaultSeason || document.getElementById('seasonSelect').value;
-    localStorage.setItem('lastSeason', season); // Guardar la última temporada vista
-    const episodeList = document.getElementById('episodeList');
-    episodeList.innerHTML = ''; // Limpiar la lista de episodios
-    ...
-}
-
     </script>
 </head>
 <body>
@@ -306,9 +298,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentUser = localStorage.getItem('currentUser');
     if (!currentUser) {
         return;
-const lastSeason = localStorage.getItem('lastSeason') || 1;
-document.getElementById('seasonSelect').value = lastSeason;
-loadSeason(lastSeason);
     }
 
 
