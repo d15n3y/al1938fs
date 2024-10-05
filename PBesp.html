@@ -292,4 +292,30 @@ Height: 8%;
 
     </div>
 </body>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        return;
+    }
+
+    // Cargar el estado de cada checkbox
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        const savedState = localStorage.getItem(`${currentUser}_${checkbox.id}`);
+        if (savedState !== null) {
+            checkbox.checked = savedState === 'true';
+        }
+
+        // Guardar el estado del checkbox cuando cambia
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(`${currentUser}_${checkbox.id}`, checkbox.checked);
+        });
+    });
+});
+
+</script>
+
 </html>
