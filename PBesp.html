@@ -110,10 +110,13 @@ Height: 8%;
         }
 
         function loadSeason(defaultSeason = null) {
-            const season = defaultSeason || document.getElementById('seasonSelect').value;
-            const episodeList = document.getElementById('episodeList');
-            episodeList.innerHTML = ''; // Limpiar la lista de episodios
+    // Obtener la última temporada vista del localStorage
+    const lastSeason = localStorage.getItem("lastSeason");
+    const season = defaultSeason || (lastSeason ? parseInt(lastSeason) : 1); // Usar la última temporada o 1
+    const episodeList = document.getElementById('episodeList');
+    episodeList.innerHTML = ''; // Limpiar la lista de episodios
 
+}
             const episodes = {
                 1: [
     { name: 'Capítulo 1: "Pilot"', link: 'https://drive.google.com/file/d/1NqLIkoV1OCk7TPmR-lvqOJosaptENYc2/preview' },
