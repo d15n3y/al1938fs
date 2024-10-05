@@ -245,22 +245,6 @@ Height: 50px;
             document.getElementById('closeButton').style.display = 'none'; // Ocultar el botón "X"
         }
 
-        function loadCheckboxStates() {
-            const season = document.getElementById('seasonSelect').value;
-            const checkboxes = document.querySelectorAll('.episode-list input[type="checkbox"]');
-            checkboxes.forEach((checkbox, index) => {
-                const episodeKey = `${season}-${index + 1}`;
-                checkbox.checked = localStorage.getItem(episodeKey) === 'true';
-            });
-        }
-
-        function saveCheckboxState(episode) {
-            const season = document.getElementById('seasonSelect').value;
-            const episodeKey = `${season}-${episode}`;
-            const checkbox = document.getElementById(`ep${episode}`);
-            localStorage.setItem(episodeKey, checkbox.checked);
-        }
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const currentUser = localStorage.getItem('currentUser');
