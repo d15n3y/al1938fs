@@ -242,26 +242,42 @@ function closeIframe() {
     document.getElementById('closeButton').style.display = 'none'; // Ocultar el botón "X"
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
     const currentUser = localStorage.getItem('currentUser');
     if (!currentUser) {
         return;
     }
 
-    // Cargar el estado de cada checkbox
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(function(checkbox) {
-        const savedState = localStorage.getItem(`${currentUser}_${checkbox.id}`);
-        if (savedState !== null) {
-            checkbox.checked = savedState === 'true';
-        }
+    // Cargar la última temporada y episodio vistos
+    const lastSeason = localStorage.getItem(`${currentUser}_lastSeason`) || '1'; // Por defecto la temporada 1
+    const lastEpisode = localStorage.getItem(`${currentUser}_lastEpisode`) || '1'; // Por defecto el episodio 1
 
-        // Guardar el estado del checkbox cuando cambia
-        checkbox.addEventListener('change', function() {
-            localStorage.setItem(`${currentUser}_${checkbox.id}`, checkbox.checked);
-        });
-    });
+    loadSeason(lastSeason); // Cargar la última temporada
+    loadEpisode(lastSeason, lastEpisode, episodes[lastSeason][lastEpisode - 1].link); // Cargar el último episodio
+    loadCheckboxStates(); // Cargar el estado de los checkboxes al inicio
 });
+
+   function loadEpisode(season, episode, link) {
+    const iframe = document.getElementById('VideoFrame');
+    iframe.src = link; // Cambiar aquí para usar el enlace del episodio
+    saveCheckboxState(episode); // Guardar el estado del checkbox al cargar el episodio
+    document.getElementById('closeButton').style.display = 'block'; // Mostrar el botón "X"
+    
+    // Guardar la última temporada y episodio vistos
+    const currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+        localStorage.setItem(`${currentUser}_lastSeason`, season);
+        localStorage.setItem(`${currentUser}_lastEpisode`, episode);
+    }
+
+
+
+
+
 
 
  // Bloquear el clic derecho
