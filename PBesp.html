@@ -218,10 +218,7 @@ Height: 50px;
     { name: 'Capítulo 9: "Behind the Eyes"', link: 'https://drive.google.com/file/d/1k32QOVroQpbgPA55OmdMS8_c_JWYho0o/preview' },
 ],
 
-
-
-                // Continúa con las temporadas restantes
-            };
+        };
 
             if (episodes[season]) {
                 episodes[season].forEach(function (episode, index) {
@@ -232,34 +229,41 @@ Height: 50px;
             }
         }
 
-        function loadEpisode(season, episode, link) {
-            const iframe = document.getElementById('VideoFrame');
-            iframe.src = link; // Cambiar aquí para usar el enlace del episodio
-            saveCheckboxState(episode); // Guardar el estado del checkbox al cargar el episodio
-            document.getElementById('closeButton').style.display = 'block'; // Mostrar el botón "X"
-        }
+       function loadEpisode(season, episode, link) {
+    const iframe = document.getElementById('VideoFrame');
+    iframe.src = 'https://drive.google.com/file/d/1NqLIkoV1OCk7TPmR-lvqOJosaptENYc2/preview'; // Cambiar aquí para usar el enlace del episodio
+    saveCheckboxState(episode); // Guardar el estado del checkbox al cargar el episodio
+    document.getElementById('closeButton').style.display = 'block'; // Mostrar el botón "X"
+}
 
-        function closeIframe() {
-            const iframe = document.getElementById('VideoFrame');
-            iframe.src = ''; // Limpiar el src del iframe
-            document.getElementById('closeButton').style.display = 'none'; // Ocultar el botón "X"
-        }
+function closeIframe() {
+    const iframe = document.getElementById('VideoFrame');
+    iframe.src = ''; // Limpiar el src del iframe
+    document.getElementById('closeButton').style.display = 'none'; // Ocultar el botón "X"
+}
 
-        function loadCheckboxStates() {
-            const season = document.getElementById('seasonSelect').value;
-            const checkboxes = document.querySelectorAll('.episode-list input[type="checkbox"]');
-            checkboxes.forEach((checkbox, index) => {
-                const episodeKey = `${season}-${index + 1}`;
-                checkbox.checked = localStorage.getItem(episodeKey) === 'true';
-            });
-        }
+function loadCheckboxStates() {
+    const userId = localStorage.getItem('currentUser'); // Obtener el ID del usuario actual
+    const season = document.getElementById('seasonSelect').value;
+    const checkboxes = document.querySelectorAll('.episode-list input[type="checkbox"]');
+    checkboxes.forEach((checkbox, index) => {
+        const episodeKey = `${userId}-${season}-${index + 1}`;
+        checkbox.checked = localStorage.getItem(episodeKey) === 'true';
+    });
+}
 
-        function saveCheckboxState(episode) {
-            const season = document.getElementById('seasonSelect').value;
-            const episodeKey = `${season}-${episode}`;
-            const checkbox = document.getElementById(`ep${episode}`);
-            localStorage.setItem(episodeKey, checkbox.checked);
-        }
+function saveCheckboxState(episode) {
+    const userId = localStorage.getItem('currentUser'); // Obtener el ID del usuario actual
+    const season = document.getElementById('seasonSelect').value;
+    const episodeKey = `${userId}-${season}-${episode}`;
+    const checkbox = document.getElementById(`ep${episode}`);
+    localStorage.setItem(episodeKey, checkbox.checked);
+}
+
+ // Bloquear el clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
 
 
     </script>
