@@ -1,5 +1,26 @@
 body { background-color: black; font-family: Arial, sans-serif; text-align: center; color: white; margin: 0; height: 0vh; overflow-y: auto; position: relative; z-index: 1; } 
 
+
+
+   #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        #modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -21,34 +42,39 @@ body { background-color: black; font-family: Arial, sans-serif; text-align: cent
     scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
 }
 
+.search-container {
+margin-top: 6%;
+    margin-bottom: 0%;
+}
+
+#search-input {
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgba(128, 128, 128, 0.5); /* Gris translúcido */
+    color: #fff; /* Cambia el color del texto si es necesario */
+}
+
+#search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Color del texto del placeholder */
+}
 
 
+#search-button {
+            padding: 10px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
 
 
 .disney-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 10%; text-align: center; } 
 
 .marvel-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
 
-.ganatomy-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
-
-.na-image { width: 34%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
-
-.got-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
-
-.tboys-image { width: 25%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; } 
-
-.fleabag-image { width: 20%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; }
-
-.lcdp-image { width: 40%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; }
-
-.loki-image { width: 20%; height: auto; margin-bottom: 0%; margin-top: 0%; text-align: center; }
-
-
 .dreamworks-image { width: 34%; height: auto; margin-bottom: 0%; margin-top: 1%; text-align: center; } 
-
-.paramount-image { width: 34%; height: auto; margin-bottom: 0%; margin-top: 1%; text-align: center; } 
-
-
 
 .series-image { width: 30%; height: auto; margin-bottom: 0%; margin-top: 1%; text-align: center; } 
 
@@ -56,33 +82,20 @@ body { background-color: black; font-family: Arial, sans-serif; text-align: cent
 
 
 
-h2 { margin-top: -8%; font-family: 'Waltograph', sans-serif; font-size: 2em; font-weight: bold; color: #FFFFFF; text-align: right; margin-right: 5%; } .movie-list { list-style: none; position: relative; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 8%; margin-bottom: 0%; width: 100%; overflow: auto; } .movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } 
+h2 { margin-top: -8%; font-family: 'Waltograph', sans-serif; font-size: 2em; font-weight: bold; color: #FFFFFF; text-align: right; margin-right: 5%; } 
+
+.movie-list { list-style: none; position: relative; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 1%; margin-bottom: 0%; width: 100%; overflow: auto; } .movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } 
 
 .marvel-movie-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } 
 
 
-.marvel-movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .marvel-movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } .gaseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .gaseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .gaseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } 
-
-.naseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } 
-
-.naseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .naseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } 
-
-.gotseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .gotseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .gotseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
-
-.tbseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0; width: 100%; overflow: auto; } .tbseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .tbseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
-
-.fbseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: center; margin-bottom: 0; }
-
-
-.lcdpseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0; width: 100%; overflow: auto; } .lcdpseason-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .lcdpseason-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
-
-.lokiseason-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: center; margin-bottom: 0; }
+.marvel-movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .marvel-movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; } 
 
 
 
 .dreamworks-movie-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .dreamworks-movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .dreamworks-movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
 
-.paramount-movie-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .paramount-movie-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .paramount-movie-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+
 
 
 .series-list { list-style: none; padding: 0; display: flex; flex-wrap: nowrap; justify-content: flex-start; margin-top: 0%; margin-bottom: 0%; width: 100%; overflow: auto; } .series-list::-webkit-scrollbar { width: 10px; height: 10px; background-color: transparent; border-radius: 10px; } .series-list::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
