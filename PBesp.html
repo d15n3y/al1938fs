@@ -90,24 +90,31 @@ Height: 50px;
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            loadSeason(1);
-            loadEpisode('1', '1');
-            loadCheckboxStates(); // Cargar el estado de los checkboxes al inicio
-        });
 
-        function changeLanguage(lang) {
-            if (lang === 'es') {
-                window.location.href = 'PBesp.html';
-            } else if (lang === 'en') {
-                window.location.href = 'PBeng.html';
-            }
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    const seasonSelect = document.getElementById('seasonSelect');
+    loadEpisodes(seasonSelect.value);
 
-        function loadSeason(defaultSeason = null) {
-            const season = defaultSeason || document.getElementById('seasonSelect').value;
-            const episodeList = document.getElementById('episodeList');
-            episodeList.innerHTML = ''; // Limpiar la lista de episodios
+    seasonSelect.addEventListener('change', (event) => {
+        const selectedSeason = event.target.value;
+        loadEpisodes(selectedSeason);
+    });
+});
+
+       document.addEventListener('DOMContentLoaded', () => {
+    const seasonSelect = document.getElementById('seasonSelect');
+    loadSeason(seasonSelect.value);
+    
+    seasonSelect.addEventListener('change', (event) => {
+        const selectedSeason = event.target.value;
+        loadSeason(selectedSeason);
+    });
+});
+
+function loadSeason(defaultSeason = null) {
+    const season = defaultSeason || document.getElementById('seasonSelect').value;
+    const episodeList = document.getElementById('episodeList');
+    episodeList.innerHTML = ''; // Limpiar la lista de episodios
 
             const episodes = {
                 1: [
@@ -220,19 +227,30 @@ Height: 50px;
 
         };
 
-            if (episodes[season]) {
-                episodes[season].forEach(function (episode, index) {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<input type="checkbox" id="ep${index+1}"> <label for="ep${index+1}" onclick="loadEpisode('${season}', '${index+1}', '${episode.link}')">${episode.name}</label>`;
-                    episodeList.appendChild(li);
-                });
-            }
-        }
+           if (episodes[season]) {
+        episodes[season].forEach(function (episode, index) {
+            const li = document.createElement('li');
+            const checkboxId = `ep${index + 1}`;
+            li.innerHTML = `<input type="checkbox" id="${checkboxId}"> <label for="${checkboxId}" onclick="loadEpisode('${season}', '${index + 1}', '${episode.link}')">${episode.name}</label>`;
+            episodeList.appendChild(li);
 
-       function loadEpisode(season, episode, link) {
+            // Cargar el estado del checkbox
+            const userId = localStorage.getItem('currentUser');
+            const episodeKey = `${userId}-${season}-${index + 1}`;
+            const isChecked = localStorage.getItem(episodeKey) === 'true';
+            document.getElementById(checkboxId).checked = isChecked;
+
+            // Manejar el cambio del checkbox
+            document.getElementById(checkboxId).addEventListener('change', function() {
+                localStorage.setItem(episodeKey, this.checked);
+            });
+        });
+    }
+}
+
+function loadEpisode(season, episode, link) {
     const iframe = document.getElementById('VideoFrame');
     iframe.src = link; // Cambiar aquí para usar el enlace del episodio
-    saveCheckboxState(episode); // Guardar el estado del checkbox al cargar el episodio
     document.getElementById('closeButton').style.display = 'block'; // Mostrar el botón "X"
 }
 
@@ -240,24 +258,6 @@ function closeIframe() {
     const iframe = document.getElementById('VideoFrame');
     iframe.src = ''; // Limpiar el src del iframe
     document.getElementById('closeButton').style.display = 'none'; // Ocultar el botón "X"
-}
-
-function loadCheckboxStates() {
-    const userId = localStorage.getItem('currentUser'); // Obtener el ID del usuario actual
-    const season = document.getElementById('seasonSelect').value;
-    const checkboxes = document.querySelectorAll('.episode-list input[type="checkbox"]');
-    checkboxes.forEach((checkbox, index) => {
-        const episodeKey = `${userId}-${season}-${index + 1}`;
-        checkbox.checked = localStorage.getItem(episodeKey) === 'true';
-    });
-}
-
-function saveCheckboxState(episode) {
-    const userId = localStorage.getItem('currentUser'); // Obtener el ID del usuario actual
-    const season = document.getElementById('seasonSelect').value;
-    const episodeKey = `${userId}-${season}-${episode}`;
-    const checkbox = document.getElementById(`ep${episode}`);
-    localStorage.setItem(episodeKey, checkbox.checked);
 }
 
  // Bloquear el clic derecho
