@@ -242,23 +242,27 @@ function closeIframe() {
     document.getElementById('closeButton').style.display = 'none'; // Ocultar el botón "X"
 }
 
-function loadCheckboxStates() {
-    const userId = localStorage.getItem('currentUser'); // Obtener el ID del usuario actual
-    const season = document.getElementById('seasonSelect').value;
-    const checkboxes = document.querySelectorAll('.episode-list input[type="checkbox"]');
-    checkboxes.forEach((checkbox, index) => {
-        const episodeKey = `${userId}-${season}-${index + 1}`;
-        checkbox.checked = localStorage.getItem(episodeKey) === 'true';
-    });
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        return;
+    }
 
-function saveCheckboxState(episode) {
-    const userId = localStorage.getItem('currentUser'); // Obtener el ID del usuario actual
-    const season = document.getElementById('seasonSelect').value;
-    const episodeKey = `${userId}-${season}-${episode}`;
-    const checkbox = document.getElementById(`ep${episode}`);
-    localStorage.setItem(episodeKey, checkbox.checked);
-}
+    // Cargar el estado de cada checkbox
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        const savedState = localStorage.getItem(`${currentUser}_${checkbox.id}`);
+        if (savedState !== null) {
+            checkbox.checked = savedState === 'true';
+        }
+
+        // Guardar el estado del checkbox cuando cambia
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(`${currentUser}_${checkbox.id}`, checkbox.checked);
+        });
+    });
+});
+
 
  // Bloquear el clic derecho
         document.addEventListener('contextmenu', function(e) {
