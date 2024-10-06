@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Disney</title>
+    <link rel="icon" type="image/ico" href="Portadas/icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .login-container {
+            position: relative;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: black;
+        }
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Portadas/login.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            margin: 0 0 20px;
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .login-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .login-container input {
+            width: 92%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .logout-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .logout-container button {
+            padding: 5px 10px;
+            margin-right: 50px;
+            border: none;
+            border-radius: 4px;
+            background-color: #dc3545;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+        .logout-container button:hover {
+            background-color: #c82333;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+        }
+        #content {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-container" id="logoutContainer" style="display: none;">
+        <button id="logoutButton">Cerrar sesión</button>
+    </div>
+    <div class="login-container" id="loginContainer">
+        <h2>INICIAR SESIÓN</h2>
+        <form id="loginForm">
+            <label for="a1b2c3">USUARIO</label>
+            <input type="text" id="a1b2c3" name="a1b2c3" required>
+            <label for="d4e5f6">CONTRASEÑA</label>
+            <input type="password" id="d4e5f6" name="d4e5f6" required>
+            <button type="submit">Iniciar sesión</button>
+            <p id="error-message" class="error-message"></p>
+        </form>
+    </div>
+    <iframe id="content"></iframe>
+    <script>
+        const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000; // 7 días en milisegundos
+
+        function getServerLoginTime() {
+            return localStorage.getItem('serverLoginTime');
+        }
+
+        function setServerLoginTime(time) {
+            localStorage.setItem('serverLoginTime', time);
+        }
+
+        function logout() {
+            // Solo eliminar el usuario actual y el tiempo de login, sin afectar otros datos
+            localStorage.removeItem('currentUser');
+            localStorage.removeItem('serverLoginTime');
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('content').style.display = 'none';
+            document.getElementById('logoutContainer').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const serverLoginTime = getServerLoginTime();
+            const currentUser = localStorage.getItem('currentUser');
+
+            if (serverLoginTime && currentUser) {
+                const elapsedTime = Date.now() - parseInt(serverLoginTime, 10);
+                if (elapsedTime < SEVEN_DAYS) {
+                    document.getElementById('loginContainer').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+                    document.getElementById('logoutContainer').style.display = 'block';
+                    document.getElementById('content').src = 'web.html';
+                } else {
+                    localStorage.removeItem('serverLoginTime');
+                }
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const a1b2c3 = document.getElementById('a1b2c3').value;
+            const d4e5f6 = document.getElementById('d4e5f6').value;
+            const errorMessage = document.getElementById('error-message');
+            const loginContainer = document.getElementById('loginContainer');
+            const contentFrame = document.getElementById('content');
+
+            const credentials = [
+                { user: atob('YW50b3RhcA=='), pass: atob('cGVvY2FjYTEyMw==') },
+                { user: atob('cGVsaXNmcmVl'), pass: atob('bGFwY293bXg=') },
+                { user: atob('YWRtaW5jb2Nv'), pass: atob('cG90YXNpbw==') },
+                { user: atob('bWFtYQ=='), pass: atob('a2lheWE=') }
+            ];
+
+            const isValid = credentials.some(function (credential) {
+                return a1b2c3 === credential.user && d4e5f6 === credential.pass;
+            });
+
+            if (isValid) {
+                let serverLoginTime = getServerLoginTime();
+                if (!serverLoginTime) {
+                    serverLoginTime = Date.now().toString();
+                    setServerLoginTime(serverLoginTime);
+                }
+
+                localStorage.setItem('currentUser', a1b2c3);
+
+                loginContainer.style.display = 'none';
+                contentFrame.style.display = 'block';
+                contentFrame.src = 'web.html';
+                document.getElementById('logoutContainer').style.display = 'block';
+            } else {
+                errorMessage.textContent = 'USUARIO o CONTRASEÑA incorrectos.';
+            }
+        });
+
+        document.getElementById('logoutButton').addEventListener('click', logout);
+
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

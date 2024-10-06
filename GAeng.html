@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Grey's Anatomy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden; /* Evitar desplazamiento */
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .top-bar {
+            background-color: black;
+            color: red;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .top-bar h1 {
+            margin: 0;
+        }
+        .flags {
+            position: absolute;
+            right: 20px;
+            top: 17px;
+        }
+        .flags img {
+            width: 40px;
+            height: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .container {
+            display: flex;
+            height: calc(100% - 40px); /* Ajustar el contenedor al espacio restante debajo de la barra superior */
+        }
+        .sidebar {
+            width: 400px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .iframe-container {
+            flex-grow: 1;
+            padding: 20px;
+            position: relative; /* Necesario para posicionar el botón "X" */
+        }
+        .close-button {
+            position: absolute;
+width: 50px; 
+Height: 50px;
+            top: 27px;
+            right: 27px;
+            background-color: rgba(128, 128, 128, 0.7); /* Gris translúcido */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 10; /* Asegurarse de que esté encima del iframe */
+        }
+        .season-selector {
+            margin-bottom: 20px;
+        }
+        .season-selector select {
+            width: 100%;
+            padding: 10px;
+        }
+        .episode-list {
+            list-style: none;
+            padding: 0;
+        }
+        .episode-list li {
+            margin-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const seasonSelect = document.getElementById('seasonSelect');
+    loadEpisodes(seasonSelect.value);
+
+    seasonSelect.addEventListener('change', (event) => {
+        const selectedSeason = event.target.value;
+        loadEpisodes(selectedSeason);
+    });
+});
+
+       document.addEventListener('DOMContentLoaded', () => {
+    const seasonSelect = document.getElementById('seasonSelect');
+    loadSeason(seasonSelect.value);
+    
+    seasonSelect.addEventListener('change', (event) => {
+        const selectedSeason = event.target.value;
+        loadSeason(selectedSeason);
+    });
+});
+
+function loadSeason(defaultSeason = null) {
+    const season = defaultSeason || document.getElementById('seasonSelect').value;
+    const episodeList = document.getElementById('episodeList');
+    episodeList.innerHTML = ''; // Limpiar la lista de episodios
+
+            const episodes = {
+               
+
+1: [
+        { name: 'Capítulo 1: "A Hard Day\'s Night"', link: 'https://drive.google.com/file/d/1IDCLushtHv8pL__DD5lluLWOrkRwGHZr/preview' },
+        { name: 'Capítulo 2: "The First Cut Is the Deepest"', link: 'https://drive.google.com/file/d/10Qy8DgFr2NZyneTmkCZ9OfVdsyZ7HPbL/preview' },
+        { name: 'Capítulo 3: "Winning a Battle, Losing the War"', link: 'https://drive.google.com/file/d/15uoIPv15pa8evbuIZ4qA7yeUfWly9l67/preview' },
+        { name: 'Capítulo 4: "No Man\'s Land"', link: 'https://drive.google.com/file/d/1RHDCAK_sEyN8VQzNnKpjRjfE-aZ9gAFb/preview' },
+        { name: 'Capítulo 5: "Shake Your Groove Thing"', link: 'https://drive.google.com/file/d/1lc_aNfk_UyRfDkop-1gdOPn5B8n2623Y/preview' },
+        { name: 'Capítulo 6: "If Tomorrow Never Comes"', link: 'https://drive.google.com/file/d/1X1zPNB38szdkivkH-AoaMNiDNvO8vDTo/preview' },
+        { name: 'Capítulo 7: "The Self-Destruct Button"', link: 'https://drive.google.com/file/d/1x4HQrQYduEENsG8wXwHX-EYI2RZ1xJ-5/preview' },
+        { name: 'Capítulo 8: "Save Me"', link: 'https://drive.google.com/file/d/1pDTN2Je0hOeQVaaRTdDA8rVqeu5PySbd/preview' },
+        { name: 'Capítulo 9: "Who\'s Zoomin\' Who?"', link: 'https://drive.google.com/file/d/1Ter8L2Jxk8W_YRFkXbss8jrSXtx7jc1c/preview' }
+    ],
+    
+2: [
+        { name: 'Capítulo 1: "Raindrops Keep Falling on My Head"', link: 'https://drive.google.com/file/d/1QLfy69Usiy10V2icHMpr-u3PLKNx1PY6/preview' },
+        { name: 'Capítulo 2: "Enough Is Enough (No More Tears)"', link: 'https://drive.google.com/file/d/1vjc-bGRjjE-1lRtt1d0b1VL62F9jXDmh/preview' },
+        { name: 'Capítulo 3: "Make Me Lose Control"', link: 'https://drive.google.com/file/d/1UWXwl0Be4BOIAde2jB1rh9rcvYzy0sKw/preview' },
+        { name: 'Capítulo 4: "Denial, Anger, Acceptance"', link: 'https://drive.google.com/file/d/1S5gyMuDHUg7UmtqUcwg0Z2WA4WagVDrT/preview' },
+        { name: 'Capítulo 5: "Bring the Pain"', link: 'https://drive.google.com/file/d/15VaUe2WL8jUucatWnBc2KoVFUYmKG82-/preview' },
+        { name: 'Capítulo 6: "Into You Like a Train"', link: 'https://drive.google.com/file/d/1pPycLyBeUjYCBiuW8FA_RSlKGnyDlqE7/preview' },
+        { name: 'Capítulo 7: "Something to Talk About"', link: 'https://drive.google.com/file/d/1D0yw_VZosli2vA9xJHmz5MHsSxuoQTls/preview' },
+        { name: 'Capítulo 8: "A Hard Day\'s Night"', link: 'https://drive.google.com/file/d/1q8Qro_oEESqlJITj5_HXVdGPo1dRhpA7/preview' },
+        { name: 'Capítulo 9: "Thanks for the Memories"', link: 'https://drive.google.com/file/d/1A_PQE4qECYq5qswEKF37Nwha_N-E2Qhm/preview' },
+        { name: 'Capítulo 10: "Much Too Much"', link: 'https://drive.google.com/file/d/1uzYCiUYKwzgu4Zvtem89pm03-kWJV4J1/preview' },
+        { name: 'Capítulo 11: "Owner of a Lonely Heart"', link: 'https://drive.google.com/file/d/18UPpwoujfKu5zRdv-lZNEMGqyrJynOkC/preview' },
+        { name: 'Capítulo 12: "As We Know It"', link: 'https://drive.google.com/file/d/1SEDbLaB3dLxMbvMZShwZLZg40BkvLa3h/preview' },
+        { name: 'Capítulo 13: "Begin the Begin"', link: 'https://drive.google.com/file/d/1pD_74XKiksIT4F0bijO6EI58UZElD_2b/preview' },
+        { name: 'Capítulo 14: "The Name of the Game"', link: 'https://drive.google.com/file/d/1Hu8TDSgSn2fxBvfmONEKVBlgjs3hQTrN/preview' },
+        { name: 'Capítulo 15: "Losing My Religion"', link: 'https://drive.google.com/file/d/1TO8pJWUEvrLYxaMyU52Uuy3gu8oNkhsl/preview' },
+        { name: 'Capítulo 16: "It\'s the End of the World"', link: 'https://drive.google.com/file/d/1xRIUq0zZBEcc1IpD4bMXPlGnPlwUy3Kf/preview' },
+        { name: 'Capítulo 17: "As We Know It"', link: 'https://drive.google.com/file/d/1yNdUPXsLaUGdjpF1CxxFrw7pUIbylHzy/preview' },
+        { name: 'Capítulo 18: "The Other Side of This Life - Part 1"', link: 'https://drive.google.com/file/d/1cObLpcBnvnVzQJWL-VjiDN3FcYvIDn7Q/preview' },
+        { name: 'Capítulo 19: "The Other Side of This Life - Part 2"', link: 'https://drive.google.com/file/d/1oE3LHesKw-0FlvH8-J6DwN-n-0OA6sGi/preview' },
+        { name: 'Capítulo 20: "Bionic Woman"', link: 'https://drive.google.com/file/d/17p9q3ow3OH9cffR_cYaDqS9AX4dmm3PO/preview' },
+        { name: 'Capítulo 21: "Superfreak"', link: 'https://drive.google.com/file/d/1azp0zwBiuDSArY4sBDfniCcIptZ2DR6A/preview' },
+        { name: 'Capítulo 22: "The Last One"', link: 'https://drive.google.com/file/d/1wOTkViuetZAqxRGnHyU1x6Dfend4fa2v/preview' },
+        { name: 'Capítulo 23: "Losing My Religion"', link: 'https://drive.google.com/file/d/1PJq_IwMAg53kjHmuUVg1AveJujr-Bj5i/preview' },
+        { name: 'Capítulo 24: "As We Know It"', link: 'https://drive.google.com/file/d/1x6skL2NAmT16nY71IiWf54-UoyYGUxZG/preview' },
+        { name: 'Capítulo 25: "The Name of the Game"', link: 'https://drive.google.com/file/d/1a4hq5ir8IotAAJfoYkk4AP6Akj-HFfmZ/preview' },
+        { name: 'Capítulo 26: "It\'s the End of the World"', link: 'https://drive.google.com/file/d/1BeQ3GTVdO2jMwcjRwyjWy4H5iBLKCJCn/preview' },
+        { name: 'Capítulo 27: "Superfreak"', link: 'https://drive.google.com/file/d/1DAjESt7ZgiOhcrJCG4FS401fzPnQ5DHt/preview' }
+    ],
+
+        };
+
+           if (episodes[season]) {
+        episodes[season].forEach(function (episode, index) {
+            const li = document.createElement('li');
+            const checkboxId = `ep${index + 1}`;
+            li.innerHTML = `<input type="checkbox" id="${checkboxId}"> <label for="${checkboxId}" onclick="loadEpisode('${season}', '${index + 1}', '${episode.link}')">${episode.name}</label>`;
+            episodeList.appendChild(li);
+
+            // Cargar el estado del checkbox
+            const userId = localStorage.getItem('currentUser');
+            const episodeKey = `${userId}-${season}-${index + 1}`;
+            const isChecked = localStorage.getItem(episodeKey) === 'true';
+            document.getElementById(checkboxId).checked = isChecked;
+
+            // Manejar el cambio del checkbox
+            document.getElementById(checkboxId).addEventListener('change', function() {
+                localStorage.setItem(episodeKey, this.checked);
+            });
+        });
+    }
+}
+
+function loadEpisode(season, episode, link) {
+    const iframe = document.getElementById('VideoFrame');
+    iframe.src = link; // Cambiar aquí para usar el enlace del episodio
+    document.getElementById('closeButton').style.display = 'block'; // Mostrar el botón "X"
+}
+
+function closeIframe() {
+    const iframe = document.getElementById('VideoFrame');
+    iframe.src = ''; // Limpiar el src del iframe
+    document.getElementById('closeButton').style.display = 'none'; // Ocultar el botón "X"
+}
+
+ // Bloquear el clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Grey's Anatomy</h1>
+        <div class="flags">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg" alt="Español" onclick="changeLanguage('es')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English" onclick="changeLanguage('en')">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="season-selector">
+                <select id="seasonSelect" onchange="loadSeason()">
+                    <option value="1" selected>Season 1</option>
+                    <option value="2">Season 2</option>
+                    
+                </select>
+            </div>
+
+            <ul id="episodeList" class="episode-list">
+                <!-- Aquí se cargarán los episodios de la temporada seleccionada -->
+            </ul>
+        </div>
+
+        <div class="iframe-container">
+    <button id="closeButton" class="close-button" style="display: none;" onclick="closeIframe()">X</button>
+    <iframe id="VideoFrame" src="" title="Preview del Episodio" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+
+
+</div>
+
+    </div>
+
+
+</body>
+</html>
